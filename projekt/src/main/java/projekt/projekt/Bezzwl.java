@@ -3,11 +3,13 @@ package projekt.projekt;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.LayoutManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
@@ -19,70 +21,50 @@ public class Bezzwl extends JPanel {
 		Dimension size = getPreferredSize();
 		size.width = 400;
 		setPreferredSize(size);
-		
 		setBorder(BorderFactory.createTitledBorder("Zabezpieczenie nadprądowe bezzwłoczne"));
 		
-		JLabel mocZwSysLabel = new JLabel("Moc zwarciowa systemu [MVA]: ");
-		JLabel napiecieZnSysLabel = new JLabel("Napięcie znamionowe systemu [kV]: ");
+		JLabel przekladniaLabel = new JLabel("Przekładnia przekładnika prądowego: ");
+		JLabel wspBezpLabel = new JLabel("Wsólczynnik bezpieczeństwa: ");
+		String[] wspBezpList = { "1.3","1.4","1.5","1.6" };
+		final JComboBox wspBezpCBox = new JComboBox(wspBezpList);
+		final JTextField przekladniaField = new JTextField(4);
 		
-		final JTextField mocZwSysField = new JTextField(4);
-		final JTextField napiecieZnSysField = new JTextField(4);
+		JButton obliczButton = new JButton("Oblicz nastawę prądową");
 		
-		JButton addButton = new JButton("Oblicz początkowy prąd zwarciowy");
 		final JTextArea textArea = new JTextArea(10, 10);
 		
-		
-		addButton.addActionListener(new ActionListener() {
+		obliczButton.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
-							
-				double mocZwSys =(int)(Math.pow(10,6)) * Integer.parseInt(mocZwSysField.getText());
-				double napiecieZnSys = (int)(Math.pow(10,3)) * Integer.parseInt(napiecieZnSysField.getText());
-				double XZw = ((1.1)*napiecieZnSys*napiecieZnSys)/mocZwSys;
-				double Ikbis = (((1.1)*napiecieZnSys)/(Math.PI * XZw))/1000;
-				textArea.append("Reaktancja zwarciowa systemu: "+String.valueOf(XZw)+"[om]\nPoczątkowy prąd zwarciowy: "+Ikbis+"[kA]");
+				Double przekladnia = Double.parseDouble(przekladniaField.getText());
+				Double wspBezp = Double.parseDouble((String) wspBezpCBox.getSelectedItem());
+				double Ir = ((1.3) * ObliczeniaZwarciowe.Ikbis)/przekladnia; 
+				System.out.println(Ir);				
 			}
 		});
 				
 		setLayout(new GridBagLayout());
 		GridBagConstraints gc = new GridBagConstraints();
-		
-		
-		//First Column//
-		gc.weightx = 1;
-		gc.weighty = 1;
-//		gc.anchor = GridBagConstraints.LINE_END;
+				
+		//Label Column//
 		gc.gridx = 0;
 		gc.gridy = 0;
-		add(mocZwSysLabel, gc);
+		add(przekladniaLabel, gc);
 		gc.gridx = 0;
 		gc.gridy = 1;
-		add(napiecieZnSysLabel, gc);
+		add(wspBezpLabel, gc);
 		
-		//Second//
-		gc.weightx = 1;
-		gc.weighty = 1;
-//		gc.anchor = GridBagConstraints.LINE_START;
+		//Field Column
 		gc.gridx = 1;
-		gc.gridy = 0;
-		add(mocZwSysField, gc);
+		gc.gridy = 0 ;
+		add(przekladniaField, gc);
 		gc.gridx = 1;
 		gc.gridy = 1;
-		add(napiecieZnSysField, gc);
-	
-		//Third row//
-		gc.weightx = 2;
-		gc.weighty = 1;
+		add(wspBezpCBox, gc);
+		
+		//Button Row//
 		gc.gridx = 0;
 		gc.gridy = 2;
-		add(addButton, gc);
-		
-		//TextArea//
-		gc.weightx = 3;
-		gc.gridx = 2;
-		gc.gridy = 0;
-		add(textArea, gc);
-		
+		add(obliczButton, gc);
 	}
-	
 }

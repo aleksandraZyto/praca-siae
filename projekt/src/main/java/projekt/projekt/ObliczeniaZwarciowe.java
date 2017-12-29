@@ -14,8 +14,12 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 public class ObliczeniaZwarciowe extends JPanel {
-		
+
+	public static double XZw;
+	public static double Ikbis;
+	
 	public ObliczeniaZwarciowe(){
+
 		Dimension size = getPreferredSize();
 		size.height = 150;
 		setPreferredSize(size);
@@ -28,22 +32,22 @@ public class ObliczeniaZwarciowe extends JPanel {
 		final JTextField mocZwSysField = new JTextField(4);
 		final JTextField napiecieZnSysField = new JTextField(4);
 		
-		JButton addButton = new JButton("Oblicz początkowy prąd zwarciowy");
-		final JLabel wynikXZw = new JLabel();
-		final JLabel wynikIkbis = new JLabel();
+		JButton obliczButton = new JButton("Oblicz początkowy prąd zwarciowy");
+		final JLabel wynikXZwLabel = new JLabel();
+		final JLabel wynikIkbisLabel = new JLabel();
 		
 		
-		addButton.addActionListener(new ActionListener() {
+		obliczButton.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
 							
-				double mocZwSys =(int)(Math.pow(10,6)) * Integer.parseInt(mocZwSysField.getText());
-				double napiecieZnSys = (int)(Math.pow(10,3)) * Integer.parseInt(napiecieZnSysField.getText());
-				double XZw = ((1.1)*napiecieZnSys*napiecieZnSys)/mocZwSys;
-				double Ikbis = (((1.1)*napiecieZnSys)/(Math.PI * XZw))/1000;
-				wynikXZw.setText("Reaktancja zwarciowa systemu: "+String.valueOf(XZw)+"[om]");
-				wynikIkbis.setText("Początkowy prąd zwarciowy: "+String.valueOf(Ikbis)+"[kA]");
-				
+
+				Double mocZwSys = Double.parseDouble(mocZwSysField.getText()) * Math.pow(10, 6);
+				Double napiecieZnSys = Double.parseDouble(napiecieZnSysField.getText()) * Math.pow(10, 3);
+				XZw =  ((1.1)*napiecieZnSys*napiecieZnSys)/mocZwSys;
+				Ikbis = ((1.1)*napiecieZnSys)/(Math.PI * XZw);
+				wynikXZwLabel.setText("Reaktancja zwarciowa systemu: "+String.valueOf(XZw)+"[om]");
+				wynikIkbisLabel.setText("Początkowy prąd zwarciowy: "+String.valueOf(Ikbis/1000)+"[kA]");
 			}
 		});
 				
@@ -51,10 +55,10 @@ public class ObliczeniaZwarciowe extends JPanel {
 		GridBagConstraints gc = new GridBagConstraints();
 		
 		
-		//First Column//
+		//Label Column//
 		gc.weightx = 1;
 		gc.weighty = 1;
-//		gc.anchor = GridBagConstraints.LINE_END;
+		gc.anchor = GridBagConstraints.LINE_END;
 		gc.gridx = 0;
 		gc.gridy = 0;
 		add(mocZwSysLabel, gc);
@@ -62,10 +66,10 @@ public class ObliczeniaZwarciowe extends JPanel {
 		gc.gridy = 1;
 		add(napiecieZnSysLabel, gc);
 		
-		//Second//
+		//Field Column//
 		gc.weightx = 1;
 		gc.weighty = 1;
-//		gc.anchor = GridBagConstraints.LINE_START;
+		gc.anchor = GridBagConstraints.LINE_START;
 		gc.gridx = 1;
 		gc.gridy = 0;
 		add(mocZwSysField, gc);
@@ -73,22 +77,22 @@ public class ObliczeniaZwarciowe extends JPanel {
 		gc.gridy = 1;
 		add(napiecieZnSysField, gc);
 	
-		//Third row//
+		//Button row//
 		gc.weightx = 2;
 		gc.weighty = 1;
 		gc.gridx = 0;
 		gc.gridy = 2;
-		add(addButton, gc);
+		add(obliczButton, gc);
 		
 		//TextArea//
 		gc.gridx = 2;
 		gc.gridy = 0;
-		add(wynikXZw, gc);
+		add(wynikXZwLabel, gc);
 
 		//TextAreaa//
 		gc.gridx = 2;
 		gc.gridy = 1;
-		add(wynikIkbis, gc);
+		add(wynikIkbisLabel, gc);
 	}
-	
+
 }
