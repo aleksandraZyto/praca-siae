@@ -19,7 +19,8 @@ public class Bezzwl extends JPanel {
 		
 	public Bezzwl(){
 		Dimension size = getPreferredSize();
-		size.width = 400;
+		size.width = 300;
+		size.height = 300;
 		setPreferredSize(size);
 		setBorder(BorderFactory.createTitledBorder("Zabezpieczenie nadprądowe bezzwłoczne"));
 		
@@ -30,7 +31,7 @@ public class Bezzwl extends JPanel {
 		final JComboBox wspBezpCBox = new JComboBox(wspBezpList);
 		final JTextField przekladniaField = new JTextField(4);
 		JButton obliczButton = new JButton("Oblicz nastawę prądową");
-		final JTextArea textArea = new JTextArea(10, 10);
+		final JTextArea iRTextArea = new JTextArea("Prąd rozruchowy wynosi: ");
 		
 		obliczButton.addActionListener(new ActionListener() {
 			
@@ -40,7 +41,7 @@ public class Bezzwl extends JPanel {
 				Double wspBezp = Double.parseDouble((String) wspBezpCBox.getSelectedItem());
 				
 				double Ir = ((1.3) * ObliczeniaZwarciowe.iKbis)/przekladnia; 
-				System.out.println(Ir);				
+				iRTextArea.append(String.valueOf(Ir));
 			}
 		});
 				
@@ -67,5 +68,11 @@ public class Bezzwl extends JPanel {
 		gc.gridx = 0;
 		gc.gridy = 2;
 		add(obliczButton, gc);
+		
+		//TextArea Row//
+		gc.gridx = 0;
+		gc.gridy = 3;
+		add(iRTextArea, gc);
 	}
+	
 }

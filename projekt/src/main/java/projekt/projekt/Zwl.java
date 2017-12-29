@@ -18,7 +18,8 @@ public class Zwl extends JPanel {
 		
 	public Zwl(){
 		Dimension size = getPreferredSize();
-		size.width = 400;
+		size.height = 300;
+		size.width = 300;
 		setPreferredSize(size);
 		
 		setBorder(BorderFactory.createTitledBorder("Zabezpieczenie nadprądowe zwłoczne"));
@@ -45,8 +46,8 @@ public class Zwl extends JPanel {
 		JButton obliczButton = new JButton("Oblicz prąd rozruchowy");
 		
 		JButton addButton = new JButton("Oblicz początkowy prąd zwarciowy");
-		final JTextArea textArea = new JTextArea(10, 10);
-		
+		final JTextArea iRTextArea = new JTextArea("Prąd rozruchowy: ");
+
 		addButton.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
@@ -59,7 +60,9 @@ public class Zwl extends JPanel {
 				Double maksPrObc = Double.parseDouble(maksPrObcField.getText());
 				
 				double Irmin = (wspBezp*wspSamoroz*wspSchem*maksPrObc)/(wspPowr*przekladnia);
-				double Irmax = (wspSchem*2)/(przekladnia*wspCzul);
+				double Irmax = (wspSchem*ObliczeniaZwarciowe.iKmin)/(przekladnia*wspCzul);
+				
+				iRTextArea.setText(Irmin+" <= Ir <= "+Irmax);
 			}
 		});
 				
@@ -116,6 +119,11 @@ public class Zwl extends JPanel {
 		gc.gridx = 0;
 		gc.gridy = 7;
 		add(obliczButton, gc);
+		
+		//TextArea Row//
+		gc.gridx = 0;
+		gc.gridy = 8;
+		add(iRTextArea, gc);
 				
 	}
 	

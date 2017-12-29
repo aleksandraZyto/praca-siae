@@ -12,7 +12,7 @@ public class App
 			
 			public void run() {
 				JFrame frame = new MainFrame("Obliczenia zwarciowe");
-				frame.setSize(1400,1100);
+				frame.setSize(600,600);
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				frame.setVisible(true);
 			}

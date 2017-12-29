@@ -17,12 +17,13 @@ public class ObliczeniaZwarciowe extends JPanel {
 
 	public static double xZw;
 	public static double iKbis;
-	public static double iZmin;
+	public static double iKmin;
 	
 	public ObliczeniaZwarciowe(){
 
 		Dimension size = getPreferredSize();
-		size.height = 200;
+		size.width = 300;
+		size.height = 300;
 		setPreferredSize(size);		
 		setBorder(BorderFactory.createTitledBorder("Obliczenia zwarciowe"));
 		
@@ -53,7 +54,7 @@ public class ObliczeniaZwarciowe extends JPanel {
 				Double napiecieZnSys = Double.parseDouble(napiecieZnSysField.getText()) * Math.pow(10, 3);
 					
 				xZw =  ((1.1)*napiecieZnSys*napiecieZnSys)/mocZwSys;
-				iKbis = ((1.1)*napiecieZnSys)/(Math.PI * xZw);
+				iKbis = ((1.1)*napiecieZnSys)/(Math.sqrt(3) * xZw);
 				
 				xZwTextArea.append(String.valueOf(xZw));
 				iKbisTextArea.append(String.valueOf(iKbis));
@@ -67,10 +68,15 @@ public class ObliczeniaZwarciowe extends JPanel {
 				Double dlLinii = Double.parseDouble(dlLiniiField.getText());
 				Double rJedn = Double.parseDouble(rJednField.getText());
 				Double xJedn = Double.parseDouble(xJednField.getText());
+				Double napiecieZnSys = Double.parseDouble(napiecieZnSysField.getText()) * Math.pow(10, 3);
 				
 				double rLinii = dlLinii*rJedn;
 				double xLinii = dlLinii*xJedn;
 				double zZw = Math.sqrt(Math.pow(rLinii, 2)+Math.pow((xLinii+xZw), 2));
+				iKmin = ((1.1) * napiecieZnSys )/(2 * zZw);
+				
+				zZwTextArea.append(String.valueOf(zZw));
+				iKminTextArea.append(String.valueOf(iKmin));
 				
 			}
 		});
@@ -79,61 +85,69 @@ public class ObliczeniaZwarciowe extends JPanel {
 		GridBagConstraints gc = new GridBagConstraints();
 		
 		
-		//Label Column//
+		//Labels//
 		gc.gridx = 0;
 		gc.gridy = 0;
+		gc.weightx = 4;
+		gc.weighty = 2;
+		gc.anchor = GridBagConstraints.SOUTH;
 		add(mocZwSysLabel, gc);
 		gc.gridx = 0;
-		gc.gridy = 1;
+		gc.gridy = 2;
+		gc.weightx = 4;
+		gc.weighty = 2;
+		gc.anchor = GridBagConstraints.SOUTH;
 		add(napiecieZnSysLabel, gc);
 		gc.gridx = 0;
-		gc.gridy = 2;
+		gc.gridy = 4;
+		gc.weightx = 4;
+		gc.weighty = 2;
+		gc.anchor = GridBagConstraints.SOUTH;
 		add(dlLiniiLabel, gc);
 		gc.gridx = 0;
-		gc.gridy = 3;
+		gc.gridy = 6;
+		gc.weightx = 4;
+		gc.weighty = 2;
+		gc.anchor = GridBagConstraints.SOUTH;
 		add(rJednLabel, gc);
 		gc.gridx = 0;
-		gc.gridy = 4;
+		gc.gridy = 8;
+		gc.weightx = 4;
+		gc.weighty = 2;
+		gc.anchor = GridBagConstraints.SOUTH;
 		add(xJednLabel, gc);
 		
-		//Field Column//
-		gc.gridx = 1;
-		gc.gridy = 0;
-		add(mocZwSysField, gc);
-		gc.gridx = 1;
+		//Fields//
+		gc.gridx = 0;
 		gc.gridy = 1;
-		add(napiecieZnSysField, gc);
-		gc.gridx = 1;
-		gc.gridy = 2;
-		add(dlLiniiField, gc);
-		gc.gridx = 1;
+		gc.weightx = 1;
+		gc.weighty = 1;
+		gc.anchor = GridBagConstraints.NORTH;		
+		add(mocZwSysField, gc);
+		gc.gridx = 0;
 		gc.gridy = 3;
-		add(rJednField, gc);
-		gc.gridx = 1;
-		gc.gridy = 4;
-		add(xJednField, gc);
-		
-		//Button row//
+		gc.anchor = GridBagConstraints.NORTH;
+		gc.weightx = 1;
+		gc.weighty = 1;
+		add(napiecieZnSysField, gc);
 		gc.gridx = 0;
 		gc.gridy = 5;
-		add(iKbisButton, gc);
+		gc.weightx = 1;
+		gc.weighty = 1;
+		gc.anchor = GridBagConstraints.NORTH;		
+		add(dlLiniiField, gc);
 		gc.gridx = 0;
-		gc.gridy = 6;
-		add(iKminButton, gc);
-		
-		//TextArea row//
-		gc.gridx = 3;
-		gc.gridy = 0;
-		add(xZwTextArea, gc);
-		gc.gridx = 3;
-		gc.gridy = 1;
-		add(iKbisTextArea, gc);
-		gc.gridx = 3;
-		gc.gridy = 2;
-		add(zZwTextArea, gc);
-		gc.gridx = 3;
-		gc.gridy = 3;
-		add(iKminTextArea, gc);
+		gc.gridy = 7;
+		gc.weightx = 1;
+		gc.weighty = 1;
+		gc.anchor = GridBagConstraints.NORTH;		
+		add(rJednField, gc);
+		gc.gridx = 0;
+		gc.gridy = 9;
+		gc.weightx = 1;
+		gc.weighty = 1;
+		gc.anchor = GridBagConstraints.NORTH;		
+		add(xJednField, gc);
 	}
 
 }
