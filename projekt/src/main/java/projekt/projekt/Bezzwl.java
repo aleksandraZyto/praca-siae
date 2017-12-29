@@ -25,20 +25,21 @@ public class Bezzwl extends JPanel {
 		
 		JLabel przekladniaLabel = new JLabel("Przekładnia przekładnika prądowego: ");
 		JLabel wspBezpLabel = new JLabel("Wsólczynnik bezpieczeństwa: ");
+		
 		String[] wspBezpList = { "1.3","1.4","1.5","1.6" };
 		final JComboBox wspBezpCBox = new JComboBox(wspBezpList);
 		final JTextField przekladniaField = new JTextField(4);
-		
 		JButton obliczButton = new JButton("Oblicz nastawę prądową");
-		
 		final JTextArea textArea = new JTextArea(10, 10);
 		
 		obliczButton.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
+				
 				Double przekladnia = Double.parseDouble(przekladniaField.getText());
 				Double wspBezp = Double.parseDouble((String) wspBezpCBox.getSelectedItem());
-				double Ir = ((1.3) * ObliczeniaZwarciowe.Ikbis)/przekladnia; 
+				
+				double Ir = ((1.3) * ObliczeniaZwarciowe.iKbis)/przekladnia; 
 				System.out.println(Ir);				
 			}
 		});
