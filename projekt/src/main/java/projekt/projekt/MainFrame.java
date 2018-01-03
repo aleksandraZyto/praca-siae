@@ -24,28 +24,14 @@ public class MainFrame extends JFrame {
 		oblZw = new ObliczeniaZwarciowe();
 		bezzwl = new Bezzwl();
 		zwl = new Zwl();
-
 		admit = new Admit();
 		
-		//Obliczenia zwarciowe
-//		gc.gridx = 0;
-//		gc.gridy = 0;
-//		gc.gridheight = 2;
-//		gc.weighty = 2;
-//		gc.weightx = 1;
-//		gc.fill = GridBagConstraints.VERTICAL;
-//		gc.anchor = GridBagConstraints.WEST;
-//		add(oblZw, gc);
-
 		//Obliczenia zwarciowe
 		gc.gridx = 0;
 		gc.gridy = 0;
 		gc.gridheight = 3;
 		gc.weighty = 3;
-//		gc.gridwidth = 1;
-//		gc.weightx = 1;
 		gc.fill = GridBagConstraints.VERTICAL;
-//		gc.fill = GridBagConstraints.HORIZONTAL;
 		add(oblZw, gc);
 	
 		//Bezzwl
@@ -53,10 +39,9 @@ public class MainFrame extends JFrame {
 		gc.gridy = 0;
 		gc.gridheight = 1;
 		gc.weighty = 1;
-//		gc.gridwidth = 1;
-//		gc.weightx = 1;
-//		gc.fill = GridBagConstraints.VERTICAL;
-//		gc.fill = GridBagConstraints.HORIZONTAL;
+		gc.fill = GridBagConstraints.VERTICAL;
+		gc.fill = GridBagConstraints.HORIZONTAL;
+		gc.anchor = GridBagConstraints.NORTH;
 		add(bezzwl, gc);
 		
 		//Zwl
@@ -64,10 +49,8 @@ public class MainFrame extends JFrame {
 		gc.gridy = 1;
 		gc.gridheight = 1;
 		gc.weighty = 1;
-//		gc.gridwidth = 1;
-//		gc.weightx = 1;
-//		gc.fill = GridBagConstraints.VERTICAL;
-//		gc.fill = GridBagConstraints.HORIZONTAL;
+		gc.fill = GridBagConstraints.VERTICAL;
+		gc.fill = GridBagConstraints.HORIZONTAL;
 		add(zwl, gc);
 		
 		//Admit
@@ -75,12 +58,7 @@ public class MainFrame extends JFrame {
 		gc.gridy = 2;
 		gc.gridheight = 1;
 		gc.weighty = 1;
-//		gc.gridwidth = 1;
-//		gc.weightx = 1;
-//		gc.fill = GridBagConstraints.VERTICAL;
-//		gc.fill = GridBagConstraints.HORIZONTAL;
+		gc.fill = GridBagConstraints.VERTICAL;
 		add(admit, gc);
-		
 	}
-	
 }

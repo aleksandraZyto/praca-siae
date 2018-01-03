@@ -1,4 +1,4 @@
-package projekt.projekt;
+ package projekt.projekt;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -46,7 +46,7 @@ public class Bezzwl extends JPanel {
 			
 			public void actionPerformed(ActionEvent e) {
 				
-				Double przekladnia = Double.parseDouble(przekladniaField.getText());
+				Double przekladnia = Double.parseDouble(przekladniaField.getText().replaceAll(",", "."));
 				Double wspBezp = Double.parseDouble((String) wspBezpCBox.getSelectedItem());
 				
 				double iR = ((1.3) * ObliczeniaZwarciowe.iKbis)/przekladnia; 

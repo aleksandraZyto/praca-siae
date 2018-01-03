@@ -7,6 +7,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -24,7 +26,7 @@ public class Admit extends JPanel {
 		size.width = 300;
 		setPreferredSize(size);
 		
-		setBorder(BorderFactory.createTitledBorder("Zabezpieczenie nadprądowe zwłoczne"));
+		setBorder(BorderFactory.createTitledBorder("Zabezpieczenie ziemnozwarciowe admitancyjne"));
 		
 		JLabel prUchybLabel = new JLabel("<html><div style='text-align: center;'>Maksymalny prąd uchybowy<br/> filtra składowej zerowej prądu [mS]</div></html>: ", SwingConstants.CENTER);
 		JLabel uZerLabel = new JLabel("<html><div style='text-align: center;'>Minimalne napięcie składowej <br/>zerowej sieci [V]</div></html>: ", SwingConstants.CENTER);
@@ -32,6 +34,7 @@ public class Admit extends JPanel {
 		JLabel rodzLiniiLabel = new JLabel("Rodzaj linii: ");
 		JLabel przekladniaLabel = new JLabel("Przekładnia przekładnika prądowego [A/A]: ");
 		
+				
 		String[] rodzLiniiList = { "napowietrzna","kablowa"};
 		final JComboBox rodzLiniiCBox = new JComboBox(rodzLiniiList);
 		final JTextField przekladniaField = new JTextField(4);
@@ -40,6 +43,8 @@ public class Admit extends JPanel {
 		final JTextField uZerField = new JTextField(4);
 		JButton obliczButton = new JButton("Oblicz nastawę");
 
+		JTextField[] textFields = {przekladniaField, prUchybField, cLiniiField, uZerField};
+		
 		final DecimalFormat df = new DecimalFormat("#.###");
 		df.setRoundingMode(RoundingMode.CEILING);
 
@@ -49,10 +54,10 @@ public class Admit extends JPanel {
 			
 			public void actionPerformed(ActionEvent e) {
 				Double wspBezp = (String.valueOf(rodzLiniiCBox.getSelectedItem()).equals("napowietrzna"))?(1.2):(1.05);
-				Double przekl = Double.parseDouble(przekladniaField.getText());
-				Double prUchyb = Double.parseDouble(prUchybField.getText());
-				Double cLinii = Double.parseDouble(cLiniiField.getText());
-				Double uZer = Double.parseDouble(uZerField.getText());
+				Double przekl = Double.parseDouble(przekladniaField.getText().replaceAll(",", "."));
+				Double prUchyb = Double.parseDouble(prUchybField.getText().replaceAll(",", "."));
+				Double cLinii = Double.parseDouble(cLiniiField.getText().replaceAll(",", "."));
+				Double uZer = Double.parseDouble(uZerField.getText().replaceAll(",", "."));
 				 
 				double yMi = (przekl*prUchyb)/(uZer);
 				double yR = wspBezp*(2*Math.PI*50*cLinii+yMi);

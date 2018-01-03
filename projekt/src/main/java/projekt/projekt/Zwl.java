@@ -55,13 +55,13 @@ public class Zwl extends JPanel {
 		obliczButton.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
-				Double wspBezp = Double.parseDouble((String) wspBezpCBox.getSelectedItem());
-				Double wspPowr = Double.parseDouble((String) wspPowrCBox.getSelectedItem());
-				Double wspSchem = Double.parseDouble((String) wspSchemCBox.getSelectedItem());
-				Double wspCzul = Double.parseDouble((String) wspCzulCBox.getSelectedItem());
-				Double wspSamoroz = Double.parseDouble(wspSamorozField.getText());
-				Double przekladnia = Double.parseDouble(przekladniaField.getText());
-				Double maksPrObc = Double.parseDouble(maksPrObcField.getText());
+				Double wspBezp = Utils.cBoxConvert(wspBezpCBox);
+				Double wspPowr = Utils.cBoxConvert(wspPowrCBox);
+				Double wspSchem = Utils.cBoxConvert(wspSchemCBox);
+				Double wspCzul = Utils.cBoxConvert(wspCzulCBox);
+				Double wspSamoroz = Utils.textFieldConvert(wspSamorozField);
+				Double przekladnia = Utils.textFieldConvert(przekladniaField);
+				Double maksPrObc = Utils.textFieldConvert(maksPrObcField);
 				
 				double iRmin = (wspBezp*wspSamoroz*wspSchem*maksPrObc)/(wspPowr*przekladnia);
 				double iRmax = (wspSchem*ObliczeniaZwarciowe.iKmin)/(przekladnia*wspCzul);

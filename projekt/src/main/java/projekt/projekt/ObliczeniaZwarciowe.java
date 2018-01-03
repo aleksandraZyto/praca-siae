@@ -48,12 +48,14 @@ public class ObliczeniaZwarciowe extends JPanel {
 		final DecimalFormat df = new DecimalFormat("#.###");
 		df.setRoundingMode(RoundingMode.CEILING);
 
+		
+		
 		iKbisButton.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
 		
-				Double mocZwSys = Double.parseDouble(mocZwSysField.getText()) * Math.pow(10, 6);
-				Double napiecieZnSys = Double.parseDouble(napiecieZnSysField.getText()) * Math.pow(10, 3);
+				Double mocZwSys = Utils.textFieldConvert(mocZwSysField) * Math.pow(10, 6);
+				Double napiecieZnSys = Utils.textFieldConvert(napiecieZnSysField) * Math.pow(10, 3);
 					
 				xZw =  ((1.1)*napiecieZnSys*napiecieZnSys)/mocZwSys;
 				iKbis = ((1.1)*napiecieZnSys)/(Math.sqrt(3) * xZw);
@@ -66,10 +68,10 @@ public class ObliczeniaZwarciowe extends JPanel {
 			
 			public void actionPerformed(ActionEvent e) {
 		
-				Double dlLinii = Double.parseDouble(dlLiniiField.getText());
-				Double rJedn = Double.parseDouble(rJednField.getText());
-				Double xJedn = Double.parseDouble(xJednField.getText());
-				Double napiecieZnSys = Double.parseDouble(napiecieZnSysField.getText()) * Math.pow(10, 3);
+				Double dlLinii = Utils.textFieldConvert(dlLiniiField);
+				Double rJedn = Utils.textFieldConvert(dlLiniiField);
+				Double xJedn = Utils.textFieldConvert(dlLiniiField);
+				Double napiecieZnSys = Utils.textFieldConvert(dlLiniiField) * Math.pow(10, 3);
 				
 				double rLinii = dlLinii*rJedn;
 				double xLinii = dlLinii*xJedn;
