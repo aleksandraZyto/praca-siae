@@ -5,12 +5,13 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 public class ObliczeniaZwarciowe extends JPanel {
@@ -41,10 +42,11 @@ public class ObliczeniaZwarciowe extends JPanel {
 		JButton iKbisButton = new JButton("Oblicz początkowy prąd zwarciowy");
 		JButton iKminButton = new JButton("Oblicz minimalny prąd zwarciowy");
 		
-		final JTextArea iKbisTextArea = new JTextArea("Początkowy prąd zwarciowy: ");
-		final JTextArea iKminTextArea = new JTextArea("Minimamlny prąd zwarciowy na końcu linii: ");
-		final JTextArea xZwTextArea = new JTextArea("Reaktancja zwarciowa systemu: ");
-		final JTextArea zZwTextArea = new JTextArea("Impedancja zwarciowa na końcu linii: ");
+		final JLabel iKbisLabel = new JLabel("Ik'' = ");
+		final JLabel iKminLabel = new JLabel("Ikmin = ");
+		
+		final DecimalFormat df = new DecimalFormat("#.###");
+		df.setRoundingMode(RoundingMode.CEILING);
 
 		iKbisButton.addActionListener(new ActionListener() {
 			
@@ -56,8 +58,7 @@ public class ObliczeniaZwarciowe extends JPanel {
 				xZw =  ((1.1)*napiecieZnSys*napiecieZnSys)/mocZwSys;
 				iKbis = ((1.1)*napiecieZnSys)/(Math.sqrt(3) * xZw);
 				
-				xZwTextArea.append(String.valueOf(xZw));
-				iKbisTextArea.append(String.valueOf(iKbis));
+				iKbisLabel.setText("Ik'' = "+(df.format(iKbis/1000))+"[kA]");
 			}
 		});
 		
@@ -75,8 +76,7 @@ public class ObliczeniaZwarciowe extends JPanel {
 				double zZw = Math.sqrt(Math.pow(rLinii, 2)+Math.pow((xLinii+xZw), 2));
 				iKmin = ((1.1) * napiecieZnSys )/(2 * zZw);
 				
-				zZwTextArea.append(String.valueOf(zZw));
-				iKminTextArea.append(String.valueOf(iKmin));
+				iKminLabel.setText("Ikmin = "+(df.format(iKmin/1000))+"[kA]");
 				
 			}
 		});
@@ -148,6 +148,23 @@ public class ObliczeniaZwarciowe extends JPanel {
 		gc.weighty = 1;
 		gc.anchor = GridBagConstraints.NORTH;		
 		add(xJednField, gc);
+		
+		//Button 
+		gc.gridx = 0;
+		gc.gridy ++;
+		add(iKbisButton, gc);
+		gc.gridx = 0;
+		gc.gridy ++;
+		add(iKminButton, gc);
+	
+		//Wyniki
+		gc.gridx = 0;
+		gc.gridy ++;
+		add(iKbisLabel, gc);
+		gc.gridx = 0;
+		gc.gridy ++;
+		add(iKminLabel, gc);
+		
 	}
 
 }

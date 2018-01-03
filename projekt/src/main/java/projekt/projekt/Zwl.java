@@ -5,6 +5,8 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -44,11 +46,13 @@ public class Zwl extends JPanel {
 		final JTextField przekladniaField = new JTextField(4);
 		final JTextField maksPrObcField = new JTextField(4);
 		JButton obliczButton = new JButton("Oblicz prąd rozruchowy");
-		
-		JButton addButton = new JButton("Oblicz początkowy prąd zwarciowy");
-		final JTextArea iRTextArea = new JTextArea("Prąd rozruchowy: ");
 
-		addButton.addActionListener(new ActionListener() {
+		final DecimalFormat df = new DecimalFormat("#.###");
+		df.setRoundingMode(RoundingMode.CEILING);
+
+		final JLabel iRLabel = new JLabel("Ir = ");
+
+		obliczButton.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
 				Double wspBezp = Double.parseDouble((String) wspBezpCBox.getSelectedItem());
@@ -59,10 +63,10 @@ public class Zwl extends JPanel {
 				Double przekladnia = Double.parseDouble(przekladniaField.getText());
 				Double maksPrObc = Double.parseDouble(maksPrObcField.getText());
 				
-				double Irmin = (wspBezp*wspSamoroz*wspSchem*maksPrObc)/(wspPowr*przekladnia);
-				double Irmax = (wspSchem*ObliczeniaZwarciowe.iKmin)/(przekladnia*wspCzul);
+				double iRmin = (wspBezp*wspSamoroz*wspSchem*maksPrObc)/(wspPowr*przekladnia);
+				double iRmax = (wspSchem*ObliczeniaZwarciowe.iKmin)/(przekladnia*wspCzul);
 				
-				iRTextArea.setText(Irmin+" <= Ir <= "+Irmax);
+				iRLabel.setText(df.format(iRmin)+" [kA] <= Ir <= "+df.format(iRmax)+" [kA]");
 			}
 		});
 				
@@ -120,10 +124,10 @@ public class Zwl extends JPanel {
 		gc.gridy = 7;
 		add(obliczButton, gc);
 		
-		//TextArea Row//
+		//Wyniki Row//
 		gc.gridx = 0;
 		gc.gridy = 8;
-		add(iRTextArea, gc);
+		add(iRLabel, gc);
 				
 	}
 	
