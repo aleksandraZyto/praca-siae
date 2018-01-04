@@ -11,10 +11,8 @@ public class App
     	SwingUtilities.invokeLater(new Runnable() {
 			
 			public void run() {
-				JFrame frame = new MainFrame("Obliczenia zwarciowe");
-				frame.setSize(700,700);
-				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				frame.setVisible(true);
+				JFrame frame = new MainFrame("Nastawy zabezpieczeń linii SN");
+				Utils.frameSetting(frame, 600, 350);
 			}
 		});
     	

@@ -22,8 +22,8 @@ public class Admit extends JPanel {
 		
 	public Admit(){
 		Dimension size = getPreferredSize();
-		size.height = 300;
-		size.width = 300;
+		size.height = 600;
+		size.width = 600;
 		setPreferredSize(size);
 		
 		setBorder(BorderFactory.createTitledBorder("Zabezpieczenie ziemnozwarciowe admitancyjne"));
@@ -43,8 +43,6 @@ public class Admit extends JPanel {
 		final JTextField uZerField = new JTextField(4);
 		JButton obliczButton = new JButton("Oblicz nastawę");
 
-		JTextField[] textFields = {przekladniaField, prUchybField, cLiniiField, uZerField};
-		
 		final DecimalFormat df = new DecimalFormat("#.###");
 		df.setRoundingMode(RoundingMode.CEILING);
 
@@ -54,13 +52,14 @@ public class Admit extends JPanel {
 			
 			public void actionPerformed(ActionEvent e) {
 				Double wspBezp = (String.valueOf(rodzLiniiCBox.getSelectedItem()).equals("napowietrzna"))?(1.2):(1.05);
-				Double przekl = Double.parseDouble(przekladniaField.getText().replaceAll(",", "."));
-				Double prUchyb = Double.parseDouble(prUchybField.getText().replaceAll(",", "."));
-				Double cLinii = Double.parseDouble(cLiniiField.getText().replaceAll(",", "."));
-				Double uZer = Double.parseDouble(uZerField.getText().replaceAll(",", "."));
-				 
+	
+				Double przekl = Utils.textFieldConvert(przekladniaField);
+				Double prUchyb = Utils.textFieldConvert(prUchybField);
+				Double cLinii = Utils.textFieldConvert(cLiniiField);
+				Double uZer = Utils.textFieldConvert(uZerField);
+				
 				double yMi = (przekl*prUchyb)/(uZer);
-				double yR = wspBezp*(2*Math.PI*50*cLinii+yMi);
+				double yR = wspBezp*(2*Math.PI*50*(cLinii/Math.pow(10, 6))+yMi);
 			
 				yRLabel.setText("Yr = "+df.format(yR)+" [mS]");
 			}

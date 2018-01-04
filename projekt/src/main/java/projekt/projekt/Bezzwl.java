@@ -24,7 +24,7 @@ public class Bezzwl extends JPanel {
 		
 	public Bezzwl(){
 		Dimension size = getPreferredSize();
-		size.width = 300;
+		size.width = 600;
 		size.height = 300;
 		setPreferredSize(size);
 		setBorder(BorderFactory.createTitledBorder("Zabezpieczenie nadprądowe bezzwłoczne"));
@@ -32,8 +32,8 @@ public class Bezzwl extends JPanel {
 		final DecimalFormat df = new DecimalFormat("#.###");
 		df.setRoundingMode(RoundingMode.CEILING);
 		
-		JLabel przekladniaLabel = new JLabel("Przekładnia przekładnika prądowego: ");
-		JLabel wspBezpLabel = new JLabel("Wsólczynnik bezpieczeństwa: ");
+		JLabel przekladniaLabel = new JLabel("Przekładnia przekładnika prądowego [A/A]: ");
+		JLabel wspBezpLabel = new JLabel("Wsólczynnik bezpieczeństwa [-]: ");
 		
 		String[] wspBezpList = { "1.3","1.4","1.5","1.6" };
 		final JComboBox wspBezpCBox = new JComboBox(wspBezpList);
@@ -46,11 +46,10 @@ public class Bezzwl extends JPanel {
 			
 			public void actionPerformed(ActionEvent e) {
 				
-				Double przekladnia = Double.parseDouble(przekladniaField.getText().replaceAll(",", "."));
-				Double wspBezp = Double.parseDouble((String) wspBezpCBox.getSelectedItem());
-				
+				Double przekladnia = Utils.textFieldConvert(przekladniaField);
+				Double wspBezp = Utils.cBoxConvert(wspBezpCBox);
 				double iR = ((1.3) * ObliczeniaZwarciowe.iKbis)/przekladnia; 
-				iRLabel.setText("Ir = "+df.format(iR)+" [kA]");
+				iRLabel.setText("Ir = "+df.format(iR)+" [A]");
 			}
 		});
 				

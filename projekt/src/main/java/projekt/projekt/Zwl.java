@@ -26,13 +26,13 @@ public class Zwl extends JPanel {
 		
 		setBorder(BorderFactory.createTitledBorder("Zabezpieczenie nadprądowe zwłoczne"));
 		
-		JLabel wspBezpLabel = new JLabel("Współczynnik bezpieczeństwa: ");
-		JLabel wspSamorozLabel = new JLabel("Współczynnik samorozruchu silników: ");
-		JLabel wspPowrLabel = new JLabel("Współczynnik powrotu: ");
-		JLabel wspSchemLabel = new JLabel("Współczynnik schematowy: ");
-		JLabel wspCzulLabel = new JLabel("Współczynnik czułości: ");
-		JLabel przekladniaLabel = new JLabel("Przekładnia przekładnika prądowego: ");
-		JLabel maksPrObcLabel = new JLabel("Maksymalny prąd obciążenia: ");
+		JLabel wspBezpLabel = new JLabel("Współczynnik bezpieczeństwa [-]: ");
+		JLabel wspSamorozLabel = new JLabel("Współczynnik samorozruchu silników [-]: ");
+		JLabel wspPowrLabel = new JLabel("Współczynnik powrotu [-]: ");
+		JLabel wspSchemLabel = new JLabel("Współczynnik schematowy [-]: ");
+		JLabel wspCzulLabel = new JLabel("Współczynnik czułości [-]: ");
+		JLabel przekladniaLabel = new JLabel("Przekładnia przekładnika prądowego [A/A]: ");
+		JLabel maksPrObcLabel = new JLabel("Maksymalny prąd obciążenia [A]: ");
 		
 		String[] wspBezpList = { "1.3","1.4","1.5","1.6" };
 		final JComboBox wspBezpCBox = new JComboBox(wspBezpList);
@@ -45,7 +45,7 @@ public class Zwl extends JPanel {
 		final JComboBox wspCzulCBox = new JComboBox(wspCzulList);
 		final JTextField przekladniaField = new JTextField(4);
 		final JTextField maksPrObcField = new JTextField(4);
-		JButton obliczButton = new JButton("Oblicz prąd rozruchowy");
+		JButton obliczButton = new JButton("Oblicz nastawę prądową");
 
 		final DecimalFormat df = new DecimalFormat("#.###");
 		df.setRoundingMode(RoundingMode.CEILING);
@@ -66,7 +66,7 @@ public class Zwl extends JPanel {
 				double iRmin = (wspBezp*wspSamoroz*wspSchem*maksPrObc)/(wspPowr*przekladnia);
 				double iRmax = (wspSchem*ObliczeniaZwarciowe.iKmin)/(przekladnia*wspCzul);
 				
-				iRLabel.setText(df.format(iRmin)+" [kA] <= Ir <= "+df.format(iRmax)+" [kA]");
+				iRLabel.setText(df.format(iRmin)+" [A] <= Ir <= "+df.format(iRmax)+" [A]");
 			}
 		});
 				
