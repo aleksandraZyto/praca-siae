@@ -6,12 +6,14 @@ import java.text.DecimalFormat;
 
 import javax.swing.JFrame;
 
-public class MainFrame extends JFrame {
+import projekt.projekt.panels.WindowChoice;
+
+public class Mframe extends JFrame {
 	
 	private ObliczeniaZwarciowe oblZw;
 	private WindowChoice windowChoice;
 	
-	public MainFrame(String title){
+	public Mframe(String title){
 		super(title);
 		
 		setLayout(new GridBagLayout());

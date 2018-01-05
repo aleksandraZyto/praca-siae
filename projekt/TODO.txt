@@ -1,0 +1,8 @@
+susceotancyjne ierunkowe
+konduktancyjne kierunkowe
+suscpect
+kondukt 
+rzem 6 admitancyjnych
+
+zrobæ podzia³ na przeci¹¿eniowe, zwarciowe(mfaz?) i ziemnozwarciowe(admit, bezzw³, zw³ <-czyli potrzebny pr¹d zwarciowy doziemny do obl zwarciowych)
+pomyœleæ nad interfejsem

@@ -2,6 +2,8 @@ package projekt.projekt;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
+import projekt.projekt.frames.MainFrame;
+
 ;
 
 public class App 
@@ -12,7 +14,7 @@ public class App
 			
 			public void run() {
 				JFrame frame = new MainFrame("Nastawy zabezpieczeń linii SN");
-				Utils.frameSetting(frame, 600, 350);
+				Utils.frameSetting(frame, 400, 550);
 			}
 		});
     	
