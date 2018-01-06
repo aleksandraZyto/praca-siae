@@ -2,7 +2,11 @@ package projekt.projekt;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.GridBagConstraints;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.util.List;
 
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
@@ -39,6 +43,30 @@ public class Utils {
 	
 	public static JTextField field(){
 		return new JTextField(4);
+	}
+	
+	public static JTextField hfField(List<JTextField> tfList){
+		JTextField tf = new JTextField(4);
+		tfList.add(tf);
+		return tf;
+	}
+		
+	public static void zzInputFields(final JTextField field, final List<JTextField> fieldList){
+		
+		fieldList.add(field);
+		field.addKeyListener(new KeyListener() {
+			
+			public void keyPressed(KeyEvent e) {
+			}
+			public void keyReleased(KeyEvent e) {	
+				fieldList.add(field);
+				for (int i = 0; i < fieldList.size(); i++) {
+					fieldList.get(i).setText(field.getText());
+				}
+			}
+			public void keyTyped(KeyEvent e) {			
+			}
+		});
 	}
 	
 }
