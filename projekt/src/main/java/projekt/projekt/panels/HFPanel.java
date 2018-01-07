@@ -20,7 +20,7 @@ public class HFPanel extends JPanel {
 	public HFPanel(){
 	
 		Dimension size = getPreferredSize();
-		size.height = 100;
+		size.height = 70;
 		size.width = Utils.secRowWidth();
 		setPreferredSize(size);	
 		setLayout(new GridBagLayout());
