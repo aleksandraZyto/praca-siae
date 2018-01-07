@@ -11,8 +11,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
-import projekt.projekt.AdmitFrame;
-import projekt.projekt.NadprFrame;
 import projekt.projekt.Utils;
 import projekt.projekt.frames.PrzecFrame;
 import projekt.projekt.frames.ZwarFrame;
@@ -22,8 +20,8 @@ public class WindowChoice extends JPanel{
 	
 	public WindowChoice(){
 		Dimension size = getPreferredSize();
-		size.height = 500;
-		size.width = 350;
+		size.height = 450;
+		size.width = 450;
 		setPreferredSize(size);
 		
 		setBorder(BorderFactory.createTitledBorder("Wybór rodzaju zabezpieczeń"));
@@ -53,7 +51,7 @@ public class WindowChoice extends JPanel{
 		zzButton.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
-				Utils.frameSetting(new ZzFrame("Zabezpieczenia ziemnozwarciowe"), 1000, 800);
+				Utils.frameSetting(new ZzFrame("Zabezpieczenia ziemnozwarciowe"), 1500, 800);
 			}
 		});
 

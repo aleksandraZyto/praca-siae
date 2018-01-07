@@ -1,4 +1,4 @@
-package projekt.projekt;
+package projekt.projekt.stare;
 
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
@@ -15,6 +15,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+
+import projekt.projekt.Utils;
 
 public class Zwl extends JPanel {
 		

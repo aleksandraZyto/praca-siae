@@ -1,4 +1,4 @@
- package projekt.projekt;
+ package projekt.projekt.stare;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -19,6 +19,8 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
+
+import projekt.projekt.Utils;
 
 public class Bezzwl extends JPanel {
 		

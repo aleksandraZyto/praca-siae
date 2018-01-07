@@ -1,4 +1,4 @@
-package projekt.projekt;
+package projekt.projekt.stare;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;

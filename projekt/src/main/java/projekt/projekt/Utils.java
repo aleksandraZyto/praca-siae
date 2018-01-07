@@ -1,20 +1,56 @@
 package projekt.projekt;
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.GridBagConstraints;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.text.NumberFormat;
 import java.util.List;
 
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
+import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 public class Utils {
+	private static NumberFormat amountFormat;
+	
+	public static int wpppzz(){
+		return 500;
+	}
+	
+	public static int secRowWidth(){
+		return 600;
+	}
+	
+	public static int fa(){
+		int c = GridBagConstraints.CENTER;
+		return c;
+	}
+	
+	public static double fw(){
+		double c = 0.2;
+		return c;
+	}
+	
+	public static int la(){
+		int c = GridBagConstraints.EAST;
+		return c;
+	}
+	
+	public static double lw(){
+		double c = 1;
+		return c;
+	}
+	
+	public static int sa(){
+		int c = GridBagConstraints.EAST;
+		return c;
+	}
 	
 	public static void compSettings(JComponent comp, int fontSize, int width, int height){
 		comp.setPreferredSize(new Dimension(width, height));
@@ -41,8 +77,17 @@ public class Utils {
 		return new JLabel(name);
 	}
 	
-	public static JTextField field(){
-		return new JTextField(4);
+	public static JFormattedTextField numberField(String value){
+		amountFormat = NumberFormat.getNumberInstance();
+		JFormattedTextField field = new JFormattedTextField(amountFormat);
+		if(value.equals("")){
+			field.setText(value);
+		}else{
+			field.setValue(Double.parseDouble(value));
+		}
+		field.setColumns(4);
+		return field;
+		
 	}
 	
 	public static JTextField hfField(List<JTextField> tfList){
@@ -67,6 +112,14 @@ public class Utils {
 			public void keyTyped(KeyEvent e) {			
 			}
 		});
+	}
+
+	public static int ipady() {
+		return 14;
+	}
+
+	public static Color color() {
+		return Color.LIGHT_GRAY;
 	}
 	
 }
