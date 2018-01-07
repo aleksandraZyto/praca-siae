@@ -37,6 +37,7 @@ public class IrPanel extends JPanel{
 			if(i==2){
 			add(Utils.label("                "), gc);
 			}else{
+				field.setToolTipText("<html>zalecana wartość: <br/>dla sieci kompensowanych: 15-25 om <br/>dla sieci uziemionych przez rezystor: jego znamionowy prąd zwarciowy</html>");
 				add(field, gc);
 				Utils.zzInputFields(field, prRezLiniiFields);
 

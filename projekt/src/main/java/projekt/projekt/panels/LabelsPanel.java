@@ -14,7 +14,7 @@ public class LabelsPanel extends JPanel {
 	public LabelsPanel(){
 	
 		Dimension size = getPreferredSize();
-		size.height = 310;
+		size.height = Utils.columnHeight();
 		size.width = 415;
 		setPreferredSize(size);	
 		setLayout(new GridBagLayout());

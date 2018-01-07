@@ -20,28 +20,34 @@ public class HFPanel extends JPanel {
 	public HFPanel(){
 	
 		Dimension size = getPreferredSize();
-		size.height = 50;
+		size.height = 100;
 		size.width = Utils.secRowWidth();
 		setPreferredSize(size);	
 		setLayout(new GridBagLayout());
 		GridBagConstraints gc = new GridBagConstraints();	
 
 		gc.gridx = 0;
+		gc.gridy = 1;
+		add(Utils.label("  "),gc);
+		gc.gridx = 1;
+		gc.gridy = 1;
+		add(Utils.label(""),gc);
+		gc.gridx = 0;
 		gc.gridy = 0;
 		add(Utils.label("Rodzaj filtra składowej zerowej:   "), gc);
-		gc.gridx = 2;
+		gc.gridx = 1;
 		gc.gridy = 0;
 		add(Utils.label("   Przekładnia prądowa:   "), gc);
-		gc.gridx = 3;
-		gc.gridy = 0;
+		gc.gridx = 1;
+		gc.gridy = 2;
 		add(Utils.numberField(""), gc);
 		
 				final JComboBox hfCBox = new JComboBox();
 				hfCBox.addItem("-");
 				hfCBox.addItem("Holmgreen");
 				hfCBox.addItem("Ferranti");
-				gc.gridx = 1;
-				gc.gridy = 0;
+				gc.gridx = 0;
+				gc.gridy = 2;
 				add(hfCBox, gc);
 				
 				hfCBox.addActionListener(new ActionListener() {

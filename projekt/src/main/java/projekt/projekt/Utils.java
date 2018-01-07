@@ -20,11 +20,15 @@ public class Utils {
 	private static NumberFormat amountFormat;
 	
 	public static int wpppzz(){
-		return 500;
+		return 320;
 	}
 	
 	public static int secRowWidth(){
-		return 600;
+		return 330;
+	}
+	
+	public static int columnHeight(){
+		return 310;
 	}
 	
 	public static int fa(){
@@ -48,7 +52,7 @@ public class Utils {
 	}
 	
 	public static int sa(){
-		int c = GridBagConstraints.EAST;
+		int c = GridBagConstraints.WEST;
 		return c;
 	}
 	
@@ -119,6 +123,10 @@ public class Utils {
 	}
 
 	public static Color color() {
+		return Color.GRAY;
+	}
+
+	public static Color color2() {
 		return Color.LIGHT_GRAY;
 	}
 	

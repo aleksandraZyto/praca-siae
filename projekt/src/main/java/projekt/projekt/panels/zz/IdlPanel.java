@@ -24,7 +24,8 @@ public class IdlPanel extends JPanel{
 //		setBorder(BorderFactory.createTitledBorder(""));		
 		setLayout(new GridBagLayout());
 		GridBagConstraints gc = new GridBagConstraints();	
-
+		setBackground(Utils.color2());
+		
 		for (int i = 0; i <=3; i++) {
 			gc.anchor = Utils.fa();
 			gc.weightx = Utils.fw();

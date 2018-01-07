@@ -22,7 +22,8 @@ public class IcsPanel extends JPanel{
 		setPreferredSize(size);
 //		setBorder(BorderFactory.createTitledBorder(""));		
 		setLayout(new GridBagLayout());
-		GridBagConstraints gc = new GridBagConstraints();		
+		GridBagConstraints gc = new GridBagConstraints();	
+		setBackground(Utils.color2());
 		
 		final List<JTextField> prPojSieciFields = new ArrayList<JTextField>();
 		

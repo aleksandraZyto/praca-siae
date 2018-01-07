@@ -46,10 +46,10 @@ public class ZzFieldPanel extends JPanel {
 		iPanel = new IPanel();
 		
 		Dimension size = getPreferredSize();
-		size.height = 310;
+		size.height = Utils.columnHeight();
 		size.width = Utils.secRowWidth();
 		setPreferredSize(size);
-		setBorder(BorderFactory.createTitledBorder(""));		
+//		setBorder(BorderFactory.createTitledBorder(""));		
 		setLayout(new GridBagLayout());
 		GridBagConstraints gc = new GridBagConstraints();	
 

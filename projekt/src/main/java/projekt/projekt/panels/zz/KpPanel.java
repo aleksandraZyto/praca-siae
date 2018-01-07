@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.lang.reflect.Field;
 
 import javax.swing.BorderFactory;
 import javax.swing.JComponent;
@@ -24,12 +25,15 @@ public class KpPanel extends JPanel{
 //		setBorder(BorderFactory.createTitledBorder(""));		
 		setLayout(new GridBagLayout());
 		GridBagConstraints gc = new GridBagConstraints();	
+		setBackground(Utils.color2());
 
 		gc.anchor = Utils.fa();
 		gc.weightx = Utils.fw();
 		gc.gridx ++;
 		gc.gridy = 0;
-		add(Utils.numberField("0.9"), gc);	
+		JTextField tf = Utils.numberField("0.9");
+		tf.setToolTipText("<html>zalecana wartość:<br/>0,85 dla przekaźników elektromechanicznych<br/>0,95-0,99 dla przekaźników statycznych analogowych i cyfrowych");
+		add(tf, gc);	
 		
 		for (int i = 0; i <= 2; i++) {
 			gc.anchor = Utils.fa();

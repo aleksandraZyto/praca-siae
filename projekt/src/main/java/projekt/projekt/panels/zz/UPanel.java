@@ -23,6 +23,7 @@ public class UPanel extends JPanel{
 //		setBorder(BorderFactory.createTitledBorder(""));		
 		setLayout(new GridBagLayout());
 		GridBagConstraints gc = new GridBagConstraints();	
+		setBackground(Utils.color2());
 		
 		final List<JTextField> napLiniiFields = new ArrayList<JTextField>();
 		
@@ -36,6 +37,7 @@ public class UPanel extends JPanel{
 			add(Utils.label("                "), gc);
 			}else{
 				add(field, gc);
+				field.setToolTipText("<html>zalecana wartość: <br/>100V (jeśli prąd pojemnościowy zwarcia był obliczony dla napięcia nominalnego)<br/>105V (jeśli prąd pojemnościowy zwarcia był obliczony dla napięcia roboczego)<br/></html>");
 				Utils.zzInputFields(field, napLiniiFields);
 
 			}

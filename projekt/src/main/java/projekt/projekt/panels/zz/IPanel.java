@@ -28,6 +28,7 @@ public class IPanel extends JPanel{
 		gc.gridy = 0;
 		JTextField field = Utils.numberField("");
 		HFPanel.tfList.add(field);
+		field.setToolTipText("<html>zalecana wartość:<br/>dla układu Holmgreena: 30-50 mA<br/>dla przekładnika Ferrantiego: 10-20 mA</html>");
 		add(field, gc);	
 		
 		for (int i = 0; i <= 2; i++) {

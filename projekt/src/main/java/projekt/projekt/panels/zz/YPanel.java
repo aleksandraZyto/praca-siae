@@ -37,6 +37,7 @@ public class YPanel extends JPanel{
 			add(Utils.label("                "), gc);
 			}else{
 				add(field, gc);
+				field.setToolTipText("<html>zalecana wartość:<br/>dla układu Holmgreena: 2-2,5 mS<br/>dla przekładnika Ferrantiego: 0,6-0,8 mS</html>");
 				Utils.zzInputFields(field, admitUchybFields);
 
 			}

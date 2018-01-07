@@ -51,7 +51,7 @@ public class WindowChoice extends JPanel{
 		zzButton.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
-				Utils.frameSetting(new ZzFrame("Zabezpieczenia ziemnozwarciowe"), 1500, 800);
+				Utils.frameSetting(new ZzFrame("Zabezpieczenia ziemnozwarciowe"), 850, 480);
 			}
 		});
 
