@@ -14,6 +14,8 @@ import projekt.projekt.panels.HFPanel;
 
 public class YPanel extends JPanel{
 	
+	public static JTextField field;
+	
 	public YPanel(){
 		Dimension size = getPreferredSize();
 		size.height = 30;

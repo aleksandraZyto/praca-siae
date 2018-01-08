@@ -11,6 +11,8 @@ import projekt.projekt.Utils;
 import projekt.projekt.panels.HFPanel;
 
 public class IPanel extends JPanel{
+	 
+	public static JTextField field;
 	
 	public IPanel(){
 		Dimension size = getPreferredSize();
@@ -26,7 +28,7 @@ public class IPanel extends JPanel{
 		gc.weightx = Utils.fw();
 		gc.gridx ++;
 		gc.gridy = 0;
-		JTextField field = Utils.numberField("");
+		field = Utils.numberField("");
 		HFPanel.tfList.add(field);
 		field.setToolTipText("<html>zalecana wartość:<br/>dla układu Holmgreena: 30-50 mA<br/>dla przekładnika Ferrantiego: 10-20 mA</html>");
 		add(field, gc);	

@@ -16,6 +16,11 @@ import projekt.projekt.Utils;
 
 public class KbPanel extends JPanel{
 	
+	public static JTextField f1;
+	public static JTextField f2;
+	public static JTextField f3;
+	public static JTextField f4;
+	
 	public KbPanel(){
 		Dimension size = getPreferredSize();
 		size.height = 30;
@@ -30,27 +35,27 @@ public class KbPanel extends JPanel{
 		gc.weightx = Utils.fw();
 		gc.gridx ++;
 		gc.gridy = 0; 
-		JTextField f1 = Utils.numberField("1.1");
+		f1 = Utils.numberField("1.1");
 		f1.setToolTipText("zalecana wartość: 1,1 - 1,2");
 		add(f1, gc);	
 		gc.anchor = Utils.fa();
 		gc.weightx = Utils.fw();
 		gc.gridx ++;
 		gc.gridy = 0;
-		JTextField f2 = Utils.numberField("1.2");
+		f2 = Utils.numberField("1.2");
 		f2.setToolTipText("zalecana wartość: 1,2");
 		add(f2, gc);	
 		gc.anchor = Utils.fa();
 		gc.weightx = Utils.fw();
 		gc.gridx ++;
 		gc.gridy = 0;
-		JTextField f3 = Utils.numberField("");
+		f3 = Utils.numberField("");
 		add(f3, gc);	
 		gc.anchor = Utils.fa();
 		gc.weightx = Utils.fw();
 		gc.gridx ++;
 		gc.gridy = 0;
-		JTextField f4 = Utils.numberField("1.2");
+		f4 = Utils.numberField("1.2");
 		f4.setToolTipText("zalecana wartość: 1,2 - 1,5");
 		add(f4, gc);	
 	}

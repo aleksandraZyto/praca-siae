@@ -17,6 +17,8 @@ import projekt.projekt.Utils;
 
 public class KpPanel extends JPanel{
 	
+	public static JTextField field;
+	
 	public KpPanel(){
 		Dimension size = getPreferredSize();
 		size.height = 30;
@@ -31,9 +33,9 @@ public class KpPanel extends JPanel{
 		gc.weightx = Utils.fw();
 		gc.gridx ++;
 		gc.gridy = 0;
-		JTextField tf = Utils.numberField("0.9");
-		tf.setToolTipText("<html>zalecana wartość:<br/>0,85 dla przekaźników elektromechanicznych<br/>0,95-0,99 dla przekaźników statycznych analogowych i cyfrowych");
-		add(tf, gc);	
+		field = Utils.numberField("0.9");
+		field.setToolTipText("<html>zalecana wartość:<br/>0,85 dla przekaźników elektromechanicznych<br/>0,95-0,99 dla przekaźników statycznych analogowych i cyfrowych");
+		add(field, gc);	
 		
 		for (int i = 0; i <= 2; i++) {
 			gc.anchor = Utils.fa();

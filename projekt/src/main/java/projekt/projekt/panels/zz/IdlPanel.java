@@ -16,6 +16,8 @@ import projekt.projekt.Utils;
 
 public class IdlPanel extends JPanel{
 	
+	public static JTextField field;
+	
 	public IdlPanel(){
 		Dimension size = getPreferredSize();
 		size.height = 30;

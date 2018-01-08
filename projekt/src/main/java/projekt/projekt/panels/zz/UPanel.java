@@ -15,6 +15,8 @@ import projekt.projekt.Utils;
 
 public class UPanel extends JPanel{
 	
+	public static JTextField field;
+	
 	public UPanel(){
 		Dimension size = getPreferredSize();
 		size.height = 30;
@@ -28,7 +30,7 @@ public class UPanel extends JPanel{
 		final List<JTextField> napLiniiFields = new ArrayList<JTextField>();
 		
 		for(int i=0; i<=3; i++ ){
-			final JTextField field = Utils.numberField("100");
+			field = Utils.numberField("100");
 			gc.anchor = Utils.fa();
 			gc.weightx = Utils.fw();
 			gc.gridx ++;

@@ -15,6 +15,8 @@ import projekt.projekt.Utils;
 
 public class IrPanel extends JPanel{
 	
+	public static JTextField field;
+	
 	public IrPanel(){
 		Dimension size = getPreferredSize();
 		size.height = 30;
