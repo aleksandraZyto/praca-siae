@@ -62,7 +62,7 @@ public class HFPanel extends JPanel {
 							tfList.get(tfList.size()-1).setText("50");
 						}else if(hfCBox.getSelectedIndex() == 2){
 							for (int i = 0; i < tfList.size()-1; i++) {
-								tfList.get(i).setText("0,75");
+								tfList.get(i).setText("0.75");
 							}
 							tfList.get(tfList.size()-1 ).setText("20");
 						}else{

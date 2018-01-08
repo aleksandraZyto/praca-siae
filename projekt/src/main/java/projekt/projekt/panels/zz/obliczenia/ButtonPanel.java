@@ -6,13 +6,14 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 
 import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import projekt.projekt.Utils;
-import projekt.projekt.panels.zz.fields.KbPanel;
+import projekt.projekt.panels.zz.ResultPanel;
 
 public class ButtonPanel extends JPanel {
 
@@ -33,10 +34,19 @@ public class ButtonPanel extends JPanel {
 		b.setMargin(new Insets(13,15,13,15));
 		add(b, gc);
 		
+		final DecimalFormat df = new DecimalFormat("#.###");
+		df.setRoundingMode(RoundingMode.CEILING);
+		
 		b.addActionListener(new ActionListener() {
-			
-			public void actionPerformed(ActionEvent e) {
 				
+			public void actionPerformed(ActionEvent e) {
+				ResultPanel.i.setText("    =   "+df.format(I.iMin())+" [A] < Ion < "+df.format(I.iMax())+" [A]"); 
+				ResultPanel.y.setText("    =   "+df.format(1000*Y.yMin())+" [mS] < Yon < "+df.format(1000*Y.yMax())+" [mS]"); 
+				ResultPanel.g.setText("    =   "+df.format(1000*G.gMin())+" [mS] < Gon < "+df.format(1000*G.gMax())+" [mS]"); 
+				ResultPanel.b.setText("    =   "+df.format(1000*B.bMin())+" [mS] < Bon"); 
+				ResultPanel.d.setText("    =   "+df.format(Bm.wspd()));
+				ResultPanel.a.setText("    =   "+df.format(Bm.a()));
+				ResultPanel.s.setText("    =   "+df.format(Bm.s()));
 			}
 		});
 	}

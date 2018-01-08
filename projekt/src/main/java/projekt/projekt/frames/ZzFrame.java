@@ -46,7 +46,8 @@ public class ZzFrame extends JFrame{
 		add(buttonPanel, gc);
 		
 		gc.gridx = 0;
-		gc.gridy = 4;
+		gc.gridy = 3;
+		gc.anchor = GridBagConstraints.EAST;
 		add(resultPanel, gc);
 		
 		gc.gridx = 2;
