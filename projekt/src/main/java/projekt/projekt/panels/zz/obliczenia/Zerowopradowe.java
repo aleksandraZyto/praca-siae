@@ -2,12 +2,21 @@ package projekt.projekt.panels.zz.obliczenia;
 
 public class Zerowopradowe {
 	
-	public static double iMin(double kb, double iCl, double kp, double p, double iMi){
-		return (kb*iCl)/(kp*p)+Bm.mi("i");
+	static double kb = Bm.x("i", "kb");
+	static double iCs = Bm.x("i", "ics");
+	static double kp = Bm.x("i", "kp");
+	static double iMi = Bm.mi("i");
+	static double iCl = Bm.x("i", "icl");
+	static double kc = Bm.x("i", "kc");
+	static double Ir = Bm.x("i", "ir");
+	static double p = Bm.p();
+	
+	public static double iMin(){
+		return (kb*iCl)/(kp*p)+iMi;
 	}
 	
-	public static double iMax(double iCs, double iCl, double kc, double p, double iMi){
-		double ulamek = (0.5*iCs*(1-Bm.a(iCs, iCl)))/p;
-		return (ulamek-Bm.mi("i"))/kc;
+	public static double iMax(){
+		double ulamek = (0.5*iCs*(1-Bm.a()))/p;
+		return (ulamek-iMi)/kc;
 	}
 }

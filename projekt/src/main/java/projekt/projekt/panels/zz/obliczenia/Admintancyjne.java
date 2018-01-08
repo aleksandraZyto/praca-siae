@@ -2,13 +2,22 @@ package projekt.projekt.panels.zz.obliczenia;
 
 public class Admintancyjne {
 
-	public static double yMin(double kb, double iCs, double u, double p, double yMi, double iCl){
-		double a = Bm.a(iCs, iCl);
-		return (kb*iCs*a)/(u*p)+Bm.mi("y");
+	static double kb = Bm.x("y", "kb");
+	static double iCs = Bm.x("y", "ics");
+	static double u = Bm.x("y", "u");
+	static double yMi = Bm.mi("y");
+	static double iCl = Bm.x("y", "icl");
+	static double iDl = Bm.x("y", "idl");
+	static double kc = Bm.x("y", "kc");
+	static double Ir = Bm.x("y", "ir");
+	static double p = Bm.p();
+	
+	public static double yMin(){
+		return (kb*iCs*Bm.a())/(u*p)+yMi;
 	}
 	
-	public static double yMax(double iCs, double iR, double iDl, double iCl, double u, double p, double kc){
-		double pierw = Math.sqrt(Math.pow(Bm.d(iCs, iR), 2)+(Math.pow(Bm.s(iCs, iDl), 2)+Math.pow(Bm.a(iCs, iCl), 2)));
+	public static double yMax(){
+		double pierw = Math.sqrt(Math.pow(Bm.d(), 2)+Math.pow((Bm.s()+Bm.a()), 2));
 		return (pierw*iCs)/(u*p*kc);
 	}
 	

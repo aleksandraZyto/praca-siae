@@ -2,6 +2,7 @@ package projekt.projekt.panels.zz.obliczenia;
 
 import javax.swing.JTextField;
 
+import projekt.projekt.panels.HFPanel;
 import projekt.projekt.panels.zz.IPanel;
 import projekt.projekt.panels.zz.IcPanel;
 import projekt.projekt.panels.zz.IcsPanel;
@@ -26,16 +27,20 @@ public class Bm {
 		}
 	}
 	
-	public static double d(double iCs, double iR){
-		return iR/iCs;
+	public static double p(){
+		return d(HFPanel.field);
 	}
 	
-	public static double a(double iCs, double iCl){
-		return iCl/iCs;
+	public static double d(){
+		return i("ir")/i("ics");
 	}
 	
-	public static double s(double iCs, double iDl){
-		return (iDl-iCs)/iCs;
+	public static double a(){
+		return i("icl")/i("ics");
+	}
+	
+	public static double s(){
+		return (y("idl")-i("ics"))/i("ics");
 	}
 	
 	public static double x(String a, String b){
@@ -48,13 +53,14 @@ public class Bm {
 		}else if(a.equals("b")){
 			b(b);
 		}
-		
 		return -1; 
 	}
 	
 	public static double d(JTextField x){
 		return Double.parseDouble(x.getText());
 	}
+	
+	
 	
 	public static double i(String b){
 		if(b.equals("kb")){

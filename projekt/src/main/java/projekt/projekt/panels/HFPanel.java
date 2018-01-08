@@ -17,6 +17,8 @@ import projekt.projekt.Utils;
 public class HFPanel extends JPanel {
 	
 	public static List<JTextField> tfList = new ArrayList<JTextField>();
+	public static JTextField field;
+	
 	public HFPanel(){
 	
 		Dimension size = getPreferredSize();
@@ -40,7 +42,8 @@ public class HFPanel extends JPanel {
 		add(Utils.label("   Przekładnia prądowa:   "), gc);
 		gc.gridx = 1;
 		gc.gridy = 2;
-		add(Utils.numberField(""), gc);
+		field = Utils.numberField("");
+		add(field, gc);
 		
 				final JComboBox hfCBox = new JComboBox();
 				hfCBox.addItem("-");

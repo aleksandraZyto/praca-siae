@@ -2,12 +2,21 @@ package projekt.projekt.panels.zz.obliczenia;
 
 public class Konduktancyjne {
 
-	public static double gMin(double kb, double yMi){
-		return Susceptancyjne.bMin(kb, Bm.mi("y"));
+	static double kb = Bm.x("g", "kb");
+	static double u = Bm.x("g", "u");
+	static double yMi = Bm.mi("y");
+	static double kc = Bm.x("g", "kc");
+	static double Ir = Bm.x("g", "ir");
+	static double p = Bm.p();
+	static double iCs = Bm.x("g", "ics");
+	
+	
+	public static double gMin(){
+		return kb*yMi;
 	}
 	
-	public static double gMax(double iCs, double iR, double u, double p, double kc){
-		return (1000*iCs*Bm.d(iCs, iR))/(u*p*kc);
+	public static double gMax(){
+		return (1000*iCs*Bm.d())/(u*p*kc);
 	}
 	
 }
