@@ -5,8 +5,8 @@ import projekt.projekt.panels.zz.fields.YPanel;
 
 public class B {
 
-	public static double kb = Bm.x("b", "kb");
-	public static double yMi = Bm.mi("y"); 
+	public static double kb = Bm.d(KbPanel.f3);
+	public static double yMi = Bm.d(YPanel.field)/1000; 
 	
 	public static double bMin(){
 		return kb*yMi;

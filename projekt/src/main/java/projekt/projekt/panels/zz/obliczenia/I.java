@@ -1,24 +1,29 @@
 package projekt.projekt.panels.zz.obliczenia;
 
+import projekt.projekt.panels.zz.fields.IPanel;
+import projekt.projekt.panels.zz.fields.IcPanel;
+import projekt.projekt.panels.zz.fields.IcsPanel;
+import projekt.projekt.panels.zz.fields.KbPanel;
+import projekt.projekt.panels.zz.fields.KcPanel;
+import projekt.projekt.panels.zz.fields.KpPanel;
+
 public class I {
 	
-	static double kb = Bm.x("i", "kb");
-	static double iCs = Bm.x("i", "ics");
-	static double kp = Bm.x("i", "kp");
-	static double iMi = Bm.mi("i");
-	static double iCl = Bm.x("i", "icl");
-	static double kc = Bm.x("i", "kc");
-	static double Ir = Bm.x("i", "ir");
+	static double kb = Bm.d(KbPanel.f1);
+	static double iCl = Bm.d(IcPanel.field);
+	static double kp = Bm.d(KpPanel.field);
 	static double p = Bm.p();
+	static double iMi = Bm.d(IPanel.field)/1000;
+	static double iCs = Bm.d(IcsPanel.field);
+	static double a = Bm.a();
+	static double kc = Bm.d(KcPanel.f1);
 
-	public double iMin = iMin();
-	
 	public static double iMin(){
-		return (kb*iCl)/(kp*p)+iMi;
+		return ((kb*iCl)/(kp*p))+iMi;
 	}
 	
 	public static double iMax(){
-		double ulamek = (0.5*iCs*(1-Bm.a()))/p;
+		double ulamek = (0.5*iCs*(1-a))/p;
 		return (ulamek-iMi)/kc;
 	}
 }

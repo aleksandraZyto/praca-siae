@@ -12,11 +12,11 @@ import projekt.projekt.Utils;
 import projekt.projekt.panels.zz.obliczenia.I;
 
 public class ResultPanel extends JPanel {
-	
-	public JLabel i = Utils.label("");
-	public JLabel y= Utils.label("");
-	public JLabel g= Utils.label("");
-	public JLabel b= Utils.label("");
+
+	public static JLabel i  = Utils.label("");
+	public static JLabel y= Utils.label("");
+	public static JLabel g= Utils.label("");
+	public static JLabel b= Utils.label("");
 	
 	public ResultPanel(){
 	
@@ -51,8 +51,8 @@ public class ResultPanel extends JPanel {
 		add(Utils.label("Bok"), gc);
 		
 		//results
-		gc.gridy = 1;
-		gc.gridx =  0;
+		gc.gridy = 0;
+		gc.gridx =  1;
 		add(Utils.label(""), gc);
 		gc.gridx = 1;
 		gc.gridy++; 
