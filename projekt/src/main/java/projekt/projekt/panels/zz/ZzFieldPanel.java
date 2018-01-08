@@ -1,4 +1,4 @@
-package projekt.projekt.panels;
+ package projekt.projekt.panels.zz;
 
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
@@ -8,16 +8,16 @@ import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 
 import projekt.projekt.Utils;
-import projekt.projekt.panels.zz.IPanel;
-import projekt.projekt.panels.zz.IcPanel;
-import projekt.projekt.panels.zz.IcsPanel;
-import projekt.projekt.panels.zz.IdlPanel;
-import projekt.projekt.panels.zz.IrPanel;
-import projekt.projekt.panels.zz.KbPanel;
-import projekt.projekt.panels.zz.KcPanel;
-import projekt.projekt.panels.zz.KpPanel;
-import projekt.projekt.panels.zz.UPanel;
-import projekt.projekt.panels.zz.YPanel;
+import projekt.projekt.panels.zz.fields.IPanel;
+import projekt.projekt.panels.zz.fields.IcPanel;
+import projekt.projekt.panels.zz.fields.IcsPanel;
+import projekt.projekt.panels.zz.fields.IdlPanel;
+import projekt.projekt.panels.zz.fields.IrPanel;
+import projekt.projekt.panels.zz.fields.KbPanel;
+import projekt.projekt.panels.zz.fields.KcPanel;
+import projekt.projekt.panels.zz.fields.KpPanel;
+import projekt.projekt.panels.zz.fields.UPanel;
+import projekt.projekt.panels.zz.fields.YPanel;
 
 public class ZzFieldPanel extends JPanel {
 	

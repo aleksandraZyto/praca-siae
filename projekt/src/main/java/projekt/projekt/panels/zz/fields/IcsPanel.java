@@ -1,4 +1,4 @@
-package projekt.projekt.panels.zz;
+package projekt.projekt.panels.zz.fields;
 
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -13,11 +13,11 @@ import javax.swing.JTextField;
 
 import projekt.projekt.Utils;
 
-public class IrPanel extends JPanel{
+public class IcsPanel extends JPanel{
 	
 	public static JTextField field;
 	
-	public IrPanel(){
+	public IcsPanel(){
 		Dimension size = getPreferredSize();
 		size.height = 30;
 		size.width = Utils.wpppzz();
@@ -25,26 +25,24 @@ public class IrPanel extends JPanel{
 //		setBorder(BorderFactory.createTitledBorder(""));		
 		setLayout(new GridBagLayout());
 		GridBagConstraints gc = new GridBagConstraints();	
-		setBackground(Utils.color());
+		setBackground(Utils.color2());
 		
-		final List<JTextField> prRezLiniiFields = new ArrayList<JTextField>();
+		final List<JTextField> prPojSieciFields = new ArrayList<JTextField>();
 		
-		for(int i=0; i<=3; i++ ){
-			final JTextField field = Utils.numberField("20");
+		for(int i=0; i<=2; i++ ){
+			field = Utils.numberField("");
 			gc.anchor = Utils.fa();
 			gc.weightx = Utils.fw();
 			gc.gridx ++;
 			gc.gridy = 0;
-			
-			if(i==2){
-			add(Utils.label("                "), gc);
-			}else{
-				field.setToolTipText("<html>zalecana wartość: <br/>dla sieci kompensowanych: 15-25 om <br/>dla sieci uziemionych przez rezystor: jego znamionowy prąd zwarciowy</html>");
-				add(field, gc);
-				Utils.zzInputFields(field, prRezLiniiFields);
-
-			}
+			add(field, gc);			
+			Utils.zzInputFields(field, prPojSieciFields);
 		}
-	
+		
+		gc.anchor = Utils.fa();
+		gc.weightx = Utils.fw();
+		gc.gridx ++;
+		gc.gridy = 0;
+		add(Utils.label("                "), gc);
 	}
 }

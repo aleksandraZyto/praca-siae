@@ -1,4 +1,4 @@
-package projekt.projekt.panels;
+package projekt.projekt.panels.zz;
 
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;

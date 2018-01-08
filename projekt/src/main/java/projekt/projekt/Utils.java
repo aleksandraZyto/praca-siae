@@ -17,7 +17,6 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 public class Utils {
-	private static NumberFormat amountFormat;
 	
 	public static int wpppzz(){
 		return 320;
@@ -47,8 +46,7 @@ public class Utils {
 	}
 	
 	public static double lw(){
-		double c = 1;
-		return c;
+		return 1;
 	}
 	
 	public static int sa(){
@@ -77,18 +75,13 @@ public class Utils {
 		frame.setResizable(false);
 	}
 	
-	public static Component label(String name){
+	public static JLabel label(String name){
 		return new JLabel(name);
 	}
 	
-	public static JFormattedTextField numberField(String value){
-		amountFormat = NumberFormat.getNumberInstance();
-		JFormattedTextField field = new JFormattedTextField(amountFormat);
-		if(value.equals("")){
-			field.setText(value);
-		}else{
-			field.setValue(Double.parseDouble(value));
-		}
+	public static JTextField numberField(String number){
+		JTextField field = new JTextField();
+		field.setText(number);
 		field.setColumns(4);
 		return field;
 		

@@ -1,6 +1,6 @@
 package projekt.projekt.panels.zz.obliczenia;
 
-public class Zerowopradowe {
+public class I {
 	
 	static double kb = Bm.x("i", "kb");
 	static double iCs = Bm.x("i", "ics");
@@ -10,6 +10,8 @@ public class Zerowopradowe {
 	static double kc = Bm.x("i", "kc");
 	static double Ir = Bm.x("i", "ir");
 	static double p = Bm.p();
+
+	public double iMin = iMin();
 	
 	public static double iMin(){
 		return (kb*iCl)/(kp*p)+iMi;

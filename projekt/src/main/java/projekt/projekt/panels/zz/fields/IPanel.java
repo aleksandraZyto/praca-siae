@@ -1,4 +1,4 @@
-package projekt.projekt.panels.zz;
+package projekt.projekt.panels.zz.fields;
 
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import projekt.projekt.Utils;
-import projekt.projekt.panels.HFPanel;
+import projekt.projekt.panels.zz.HFPanel;
 
 public class IPanel extends JPanel{
 	 

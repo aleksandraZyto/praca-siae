@@ -4,10 +4,10 @@ import javax.swing.SwingUtilities;
 
 import projekt.projekt.frames.MainFrame;
 
-;
 
-public class App 
-{
+public class App{
+	
+	
     public static void main( String[] args )
     {
     	SwingUtilities.invokeLater(new Runnable() {
@@ -15,7 +15,7 @@ public class App
 			public void run() {
 				JFrame frame = new MainFrame("Nastawy zabezpieczeń linii SN");
 				Utils.frameSetting(frame, 500, 500);
-				
+				System.out.println("");
 
 			}
 		});

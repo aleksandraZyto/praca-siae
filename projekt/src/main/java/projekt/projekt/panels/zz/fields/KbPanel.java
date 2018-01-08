@@ -1,4 +1,4 @@
-package projekt.projekt.panels.zz;
+package projekt.projekt.panels.zz.fields;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -14,50 +14,49 @@ import javax.swing.JTextField;
 
 import projekt.projekt.Utils;
 
-public class KcPanel extends JPanel{
+public class KbPanel extends JPanel{
 	
 	public static JTextField f1;
 	public static JTextField f2;
 	public static JTextField f3;
 	public static JTextField f4;
 	
-	public KcPanel(){
+	public KbPanel(){
 		Dimension size = getPreferredSize();
 		size.height = 30;
 		size.width = Utils.wpppzz();
 		setPreferredSize(size);
 //		setBorder(BorderFactory.createTitledBorder(""));		
 		setLayout(new GridBagLayout());
-		GridBagConstraints gc = new GridBagConstraints();
-		setBackground(Utils.color2());
-
-
+		GridBagConstraints gc = new GridBagConstraints();	
+		setBackground(Utils.color());
+		
 		gc.anchor = Utils.fa();
 		gc.weightx = Utils.fw();
 		gc.gridx ++;
-		gc.gridy = 0;
-		f1 = Utils.numberField("1.2");
-		f1.setToolTipText("zalecana wartość: co najmniej 1,2");
+		gc.gridy = 0; 
+		f1 = Utils.numberField("1.1");
+		f1.setToolTipText("zalecana wartość: 1,1 - 1,2");
 		add(f1, gc);	
 		gc.anchor = Utils.fa();
 		gc.weightx = Utils.fw();
 		gc.gridx ++;
 		gc.gridy = 0;
-		f2 = Utils.numberField("2");
-		f2.setToolTipText("<html>zalecana wartość: <br/>dla sieci o p.n. uziemionym przez rezystor od 2,0 <br/> dla sieci skompensowanej i pozostałych od 1,2</html>");
-		add(f2, gc);
+		f2 = Utils.numberField("1.2");
+		f2.setToolTipText("zalecana wartość: 1,2");
+		add(f2, gc);	
 		gc.anchor = Utils.fa();
 		gc.weightx = Utils.fw();
 		gc.gridx ++;
 		gc.gridy = 0;
 		f3 = Utils.numberField("");
-		add(f3, gc);
+		add(f3, gc);	
 		gc.anchor = Utils.fa();
 		gc.weightx = Utils.fw();
 		gc.gridx ++;
 		gc.gridy = 0;
-		f4 = Utils.numberField("2");
-		f4.setToolTipText("<html>zalecana wartość: <br/>dla sieci o p.n. uziemionym przez rezystor od 2,0 <br/> dla sieci skompensowanej co najmniej 1,5</html>");
-		add(f4, gc);
+		f4 = Utils.numberField("1.2");
+		f4.setToolTipText("zalecana wartość: 1,2 - 1,5");
+		add(f4, gc);	
 	}
 }

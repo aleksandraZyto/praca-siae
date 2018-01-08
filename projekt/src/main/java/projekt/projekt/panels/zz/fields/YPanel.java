@@ -1,24 +1,22 @@
-package projekt.projekt.panels.zz;
+package projekt.projekt.panels.zz.fields;
 
-import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.util.ArrayList;
+import java.util.List;
 
-import javax.swing.BorderFactory;
-import javax.swing.JComponent;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import projekt.projekt.Utils;
+import projekt.projekt.panels.zz.HFPanel;
 
-public class IdlPanel extends JPanel{
+public class YPanel extends JPanel{
 	
 	public static JTextField field;
 	
-	public IdlPanel(){
+	public YPanel(){
 		Dimension size = getPreferredSize();
 		size.height = 30;
 		size.width = Utils.wpppzz();
@@ -26,19 +24,25 @@ public class IdlPanel extends JPanel{
 //		setBorder(BorderFactory.createTitledBorder(""));		
 		setLayout(new GridBagLayout());
 		GridBagConstraints gc = new GridBagConstraints();	
-		setBackground(Utils.color2());
+		setBackground(Utils.color());
 		
-		for (int i = 0; i <=3; i++) {
+		final List<JTextField> admitUchybFields = new ArrayList<JTextField>();
+		
+		for(int i=0; i<=3; i++ ){
+			field = Utils.numberField("");
 			gc.anchor = Utils.fa();
 			gc.weightx = Utils.fw();
 			gc.gridx ++;
 			gc.gridy = 0;
-			if(i==1){
-				add(Utils.numberField(""), gc);	
-			}else{
+			HFPanel.tfList.add(field);
+			if(i==0){
 			add(Utils.label("                "), gc);
+			}else{
+				add(field, gc);
+				field.setToolTipText("<html>zalecana wartość:<br/>dla układu Holmgreena: 2-2,5 mS<br/>dla przekładnika Ferrantiego: 0,6-0,8 mS</html>");
+				Utils.zzInputFields(field, admitUchybFields);
+
 			}
 		}
-		
 	}
 }

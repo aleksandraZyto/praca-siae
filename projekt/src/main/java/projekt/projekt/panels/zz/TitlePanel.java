@@ -1,4 +1,4 @@
-package projekt.projekt.panels;
+package projekt.projekt.panels.zz;
 
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
@@ -8,16 +8,6 @@ import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 
 import projekt.projekt.Utils;
-import projekt.projekt.panels.zz.IPanel;
-import projekt.projekt.panels.zz.IcPanel;
-import projekt.projekt.panels.zz.IcsPanel;
-import projekt.projekt.panels.zz.IdlPanel;
-import projekt.projekt.panels.zz.IrPanel;
-import projekt.projekt.panels.zz.KbPanel;
-import projekt.projekt.panels.zz.KcPanel;
-import projekt.projekt.panels.zz.KpPanel;
-import projekt.projekt.panels.zz.UPanel;
-import projekt.projekt.panels.zz.YPanel;
 
 public class TitlePanel extends JPanel {
 	

@@ -1,22 +1,23 @@
-package projekt.projekt.panels.zz;
+package projekt.projekt.panels.zz.fields;
 
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import projekt.projekt.Utils;
-import projekt.projekt.panels.HFPanel;
 
-public class YPanel extends JPanel{
+public class UPanel extends JPanel{
 	
 	public static JTextField field;
 	
-	public YPanel(){
+	public UPanel(){
 		Dimension size = getPreferredSize();
 		size.height = 30;
 		size.width = Utils.wpppzz();
@@ -24,23 +25,22 @@ public class YPanel extends JPanel{
 //		setBorder(BorderFactory.createTitledBorder(""));		
 		setLayout(new GridBagLayout());
 		GridBagConstraints gc = new GridBagConstraints();	
-		setBackground(Utils.color());
+		setBackground(Utils.color2());
 		
-		final List<JTextField> admitUchybFields = new ArrayList<JTextField>();
+		final List<JTextField> napLiniiFields = new ArrayList<JTextField>();
 		
 		for(int i=0; i<=3; i++ ){
-			final JTextField field = Utils.numberField("");
+			field = Utils.numberField("100");
 			gc.anchor = Utils.fa();
 			gc.weightx = Utils.fw();
 			gc.gridx ++;
-			gc.gridy = 0;
-			HFPanel.tfList.add(field);
+			gc.gridy = 0;			
 			if(i==0){
 			add(Utils.label("                "), gc);
 			}else{
 				add(field, gc);
-				field.setToolTipText("<html>zalecana wartość:<br/>dla układu Holmgreena: 2-2,5 mS<br/>dla przekładnika Ferrantiego: 0,6-0,8 mS</html>");
-				Utils.zzInputFields(field, admitUchybFields);
+				field.setToolTipText("<html>zalecana wartość: <br/>100V (jeśli prąd pojemnościowy zwarcia był obliczony dla napięcia nominalnego)<br/>105V (jeśli prąd pojemnościowy zwarcia był obliczony dla napięcia roboczego)<br/></html>");
+				Utils.zzInputFields(field, napLiniiFields);
 
 			}
 		}

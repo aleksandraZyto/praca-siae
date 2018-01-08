@@ -1,4 +1,4 @@
-package projekt.projekt.panels.zz;
+package projekt.projekt.panels.zz.fields;
 
 import java.awt.Color;
 import java.awt.Dimension;

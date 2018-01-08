@@ -5,11 +5,13 @@ import java.awt.GridBagLayout;
 
 import javax.swing.JFrame;
 
-import projekt.projekt.panels.HFPanel;
-import projekt.projekt.panels.LabelsPanel;
-import projekt.projekt.panels.TitlePanel;
-import projekt.projekt.panels.UnitPanel;
-import projekt.projekt.panels.ZzFieldPanel;
+import projekt.projekt.panels.zz.HFPanel;
+import projekt.projekt.panels.zz.LabelsPanel;
+import projekt.projekt.panels.zz.ResultPanel;
+import projekt.projekt.panels.zz.TitlePanel;
+import projekt.projekt.panels.zz.UnitPanel;
+import projekt.projekt.panels.zz.ZzFieldPanel;
+import projekt.projekt.panels.zz.obliczenia.ButtonPanel;
 
 public class ZzFrame extends JFrame{
 	
@@ -18,6 +20,8 @@ public class ZzFrame extends JFrame{
 	private HFPanel hfPanel;
 	private TitlePanel titlePanel;
 	private UnitPanel unitPanel;
+	private ResultPanel resultPanel;
+	private ButtonPanel buttonPanel;
 	
 	public ZzFrame(String title){
 		super(title);
@@ -30,10 +34,20 @@ public class ZzFrame extends JFrame{
 		hfPanel = new HFPanel();
 		titlePanel = new TitlePanel();
 		unitPanel = new UnitPanel();
+		resultPanel = new ResultPanel();
+		buttonPanel = new ButtonPanel();
 		
 		gc.gridx = 1;
 		gc.gridy = 0;
 		add(hfPanel, gc);
+	
+		gc.gridx = 1;
+		gc.gridy = 3;
+		add(buttonPanel, gc);
+		
+		gc.gridx = 0;
+		gc.gridy = 4;
+		add(resultPanel, gc);
 		
 		gc.gridx = 2;
 		gc.gridy = 2;

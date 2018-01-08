@@ -1,6 +1,6 @@
 package projekt.projekt.panels.zz.obliczenia;
 
-public class Admintancyjne {
+public class Y {
 
 	static double kb = Bm.x("y", "kb");
 	static double iCs = Bm.x("y", "ics");
@@ -12,12 +12,15 @@ public class Admintancyjne {
 	static double Ir = Bm.x("y", "ir");
 	static double p = Bm.p();
 	
+	public double yMin = yMin();
+	public double yMax = yMax();
+	
 	public static double yMin(){
 		return (kb*iCs*Bm.a())/(u*p)+yMi;
 	}
 	
 	public static double yMax(){
-		double pierw = Math.sqrt(Math.pow(Bm.d(), 2)+Math.pow((Bm.s()+Bm.a()), 2));
+		double pierw = Math.sqrt(Math.pow(Bm.wspd(), 2)+Math.pow((Bm.s()+Bm.a()), 2));
 		return (pierw*iCs)/(u*p*kc);
 	}
 	

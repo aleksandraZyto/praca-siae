@@ -1,4 +1,4 @@
-package projekt.projekt.panels.zz;
+package projekt.projekt.panels.zz.fields;
 
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -13,30 +13,30 @@ import javax.swing.JTextField;
 
 import projekt.projekt.Utils;
 
-public class IcsPanel extends JPanel{
+public class IcPanel extends JPanel{
 	
 	public static JTextField field;
 	
-	public IcsPanel(){
+	public IcPanel(){
 		Dimension size = getPreferredSize();
 		size.height = 30;
 		size.width = Utils.wpppzz();
 		setPreferredSize(size);
 //		setBorder(BorderFactory.createTitledBorder(""));		
 		setLayout(new GridBagLayout());
-		GridBagConstraints gc = new GridBagConstraints();	
-		setBackground(Utils.color2());
+		GridBagConstraints gc = new GridBagConstraints();		
+		setBackground(Utils.color());
 		
-		final List<JTextField> prPojSieciFields = new ArrayList<JTextField>();
+		final List<JTextField> prPojLiniiFields = new ArrayList<JTextField>();
 		
 		for(int i=0; i<=2; i++ ){
-			final JTextField field = Utils.numberField("");
+			field = Utils.numberField("");
 			gc.anchor = Utils.fa();
 			gc.weightx = Utils.fw();
 			gc.gridx ++;
 			gc.gridy = 0;
 			add(field, gc);			
-			Utils.zzInputFields(field, prPojSieciFields);
+			Utils.zzInputFields(field, prPojLiniiFields);
 		}
 		
 		gc.anchor = Utils.fa();

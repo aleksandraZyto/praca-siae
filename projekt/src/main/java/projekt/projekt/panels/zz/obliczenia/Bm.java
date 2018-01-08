@@ -2,25 +2,25 @@ package projekt.projekt.panels.zz.obliczenia;
 
 import javax.swing.JTextField;
 
-import projekt.projekt.panels.HFPanel;
-import projekt.projekt.panels.zz.IPanel;
-import projekt.projekt.panels.zz.IcPanel;
-import projekt.projekt.panels.zz.IcsPanel;
-import projekt.projekt.panels.zz.IdlPanel;
-import projekt.projekt.panels.zz.IrPanel;
-import projekt.projekt.panels.zz.KbPanel;
-import projekt.projekt.panels.zz.KcPanel;
-import projekt.projekt.panels.zz.KpPanel;
-import projekt.projekt.panels.zz.UPanel;
-import projekt.projekt.panels.zz.YPanel;
+import projekt.projekt.panels.zz.HFPanel;
+import projekt.projekt.panels.zz.fields.IPanel;
+import projekt.projekt.panels.zz.fields.IcPanel;
+import projekt.projekt.panels.zz.fields.IcsPanel;
+import projekt.projekt.panels.zz.fields.IdlPanel;
+import projekt.projekt.panels.zz.fields.IrPanel;
+import projekt.projekt.panels.zz.fields.KbPanel;
+import projekt.projekt.panels.zz.fields.KcPanel;
+import projekt.projekt.panels.zz.fields.KpPanel;
+import projekt.projekt.panels.zz.fields.UPanel;
+import projekt.projekt.panels.zz.fields.YPanel;
 
 public class Bm {
 	
 	public static double mi(String a){
 		if(a.equals("i")){
-			return Double.parseDouble(IPanel.field.getText())/1000;
+			return d(IPanel.field)/1000;
 		}else if(a.equals("y")){
-			return Double.parseDouble(YPanel.field.getText())/1000;
+			return d(YPanel.field)/1000;
 		}else{
 			System.out.println("Wrong value");
 			return -1;
@@ -31,7 +31,7 @@ public class Bm {
 		return d(HFPanel.field);
 	}
 	
-	public static double d(){
+	public static double wspd(){
 		return i("ir")/i("ics");
 	}
 	
