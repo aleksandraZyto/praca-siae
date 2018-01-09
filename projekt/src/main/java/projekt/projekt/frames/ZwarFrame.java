@@ -5,13 +5,18 @@ import java.awt.GridBagLayout;
 
 import javax.swing.JFrame;
 
-import projekt.projekt.panels.zw.OblZwPanel;
+import projekt.projekt.Utils;
+import projekt.projekt.panels.zw.ButtonPanel;
+import projekt.projekt.panels.zw.DaneZwPanel;
+import projekt.projekt.panels.zw.ResultPanel;
 import projekt.projekt.panels.zw.ZwlPanel;
 
 public class ZwarFrame extends JFrame{
 	
-	private OblZwPanel oblZw;
+	private DaneZwPanel oblZw;
 	private ZwlPanel zwlPanel;
+	private ResultPanel results;
+	private ButtonPanel button;
 	
 	public ZwarFrame(String title){
 		super(title);
@@ -19,16 +24,27 @@ public class ZwarFrame extends JFrame{
 		setLayout(new GridBagLayout());
 		GridBagConstraints gc = new GridBagConstraints();
 
-		oblZw = new OblZwPanel();
+		oblZw = new DaneZwPanel();
 		zwlPanel = new ZwlPanel();
+		results = new ResultPanel();
+		button = new ButtonPanel();
 		
 		gc.fill = GridBagConstraints.VERTICAL;
 		gc.gridx = 0;
 		gc.gridy = 0;
 		add(oblZw, gc);
-
+		
+		gc.gridx = 1;
+		gc.gridy = 1;
+		add(button, gc);
+		
 		gc.gridx = 1;
 		gc.gridy = 0;
 		add(zwlPanel, gc);
+		
+		gc.gridx = 0;
+		gc.gridy = 1;
+		gc.anchor = Utils.la();
+		add(results, gc);
 	}
 }

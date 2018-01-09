@@ -26,8 +26,6 @@ public class ZwlPanel extends JPanel {
 		size.width = 350;
 		setPreferredSize(size);
 		
-//		setBorder(BorderFactory.createTitledBorder("Zabezpieczenie nadprądowe zwłoczne"));
-//		
 		JLabel wspBezpLabel = new JLabel("Współczynnik bezpieczeństwa:   ");
 		JLabel wspSamorozLabel = new JLabel("Współczynnik samorozruchu silników:    ");
 		JLabel wspPowrLabel = new JLabel("Współczynnik powrotu:    ");
@@ -36,42 +34,11 @@ public class ZwlPanel extends JPanel {
 		JLabel przekladniaLabel = new JLabel("Przekładnia przekładnika prądowego:    ");
 		JLabel maksPrObcLabel = new JLabel("Maksymalny prąd obciążenia:    ");
 		
-		String[] wspBezpList = { "1.3","1.4","1.5","1.6" };
-		final JComboBox wspBezpCBox = new JComboBox(wspBezpList);
-		final JTextField wspSamorozField = new JTextField(4);
-		String[] wspPowrList = { "0.85","0.9","0.95"};
-		final JComboBox wspPowrCBox = new JComboBox(wspPowrList);
-		String[] wspSchemList = { "1","1.732" };
-		final JComboBox wspSchemCBox = new JComboBox(wspSchemList);
-		String[] wspCzulList = { "1.5","1.3" };
-		final JComboBox wspCzulCBox = new JComboBox(wspCzulList);
-		final JTextField przekladniaField = new JTextField(4);
-		final JTextField maksPrObcField = new JTextField(4);
-		JButton obliczButton = new JButton("Oblicz nastawę prądową");
-
 		final DecimalFormat df = new DecimalFormat("#.###");
 		df.setRoundingMode(RoundingMode.CEILING);
 
 		final JLabel iRLabel = new JLabel("Ir = ");
-
-		obliczButton.addActionListener(new ActionListener() {
-			
-			public void actionPerformed(ActionEvent e) {
-				Double wspBezp = Utils.cBoxConvert(wspBezpCBox);
-				Double wspPowr = Utils.cBoxConvert(wspPowrCBox);
-				Double wspSchem = Utils.cBoxConvert(wspSchemCBox);
-				Double wspCzul = Utils.cBoxConvert(wspCzulCBox);
-				Double wspSamoroz = Utils.textFieldConvert(wspSamorozField);
-				Double przekladnia = Utils.textFieldConvert(przekladniaField);
-				Double maksPrObc = Utils.textFieldConvert(maksPrObcField);
-				
-				double iRmin = (wspBezp*wspSamoroz*wspSchem*maksPrObc)/(wspPowr*przekladnia);
-				double iRmax = (wspSchem*OblZwPanel.iKmin)/(przekladnia*wspCzul);
-				
-				iRLabel.setText(df.format(iRmin)+" [A] <= Ir <= "+df.format(iRmax)+" [A]");
-			}
-		});
-				
+		
 		setLayout(new GridBagLayout());
 		GridBagConstraints gc = new GridBagConstraints();	
 		

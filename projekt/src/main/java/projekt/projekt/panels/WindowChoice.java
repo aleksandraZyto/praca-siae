@@ -44,7 +44,7 @@ public class WindowChoice extends JPanel{
 		zwarButton.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
-				Utils.frameSetting(new ZwarFrame("Zabezpieczenia zwarciowe"), 800, 300);
+				Utils.frameSetting(new ZwarFrame("Zabezpieczenia zwarciowe"), 800, 500);
 			}
 		});
 

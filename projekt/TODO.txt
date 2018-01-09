@@ -7,3 +7,4 @@ wymaganine co do wpisywania pól
 po wciœniêcicu x zamyka siê tylko jedno okno
 
 ZWARCIOWE:
+tooltipy
