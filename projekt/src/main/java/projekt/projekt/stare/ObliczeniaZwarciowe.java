@@ -26,16 +26,16 @@ public class ObliczeniaZwarciowe extends JPanel {
 	public ObliczeniaZwarciowe(){
 
 		Dimension size = getPreferredSize();
-		size.width = 300;
+		size.width = 700;
 		size.height = 300;
 		setPreferredSize(size);		
 		setBorder(BorderFactory.createTitledBorder("Obliczenia zwarciowe"));
 		
-		JLabel mocZwSysLabel = new JLabel("Moc zwarciowa systemu [MVA]: ");
-		JLabel napiecieZnSysLabel = new JLabel("Napięcie znamionowe systemu [kV]: ");
-		JLabel dlLiniiLabel = new JLabel("Długość zabezpieczanej linii [km]: ");
-		JLabel rJednLabel = new JLabel("Rezystancja jednostkowa linii [om/km]: ");
-		JLabel xJednLabel = new JLabel("Reaktancja jednostkowa linii [om/km]: ");
+		JLabel mocZwSysLabel = new JLabel("Moc zwarciowa systemu:    ");
+		JLabel napiecieZnSysLabel = new JLabel("Napięcie znamionowe systemu:    ");
+		JLabel dlLiniiLabel = new JLabel("Długość zabezpieczanej linii:    ");
+		JLabel rJednLabel = new JLabel("Rezystancja jednostkowa linii:    ");
+		JLabel xJednLabel = new JLabel("Reaktancja jednostkowa linii:    ");
 		
 		final JTextField mocZwSysField = new JTextField(4);
 		final JTextField napiecieZnSysField = new JTextField(4);
@@ -94,90 +94,88 @@ public class ObliczeniaZwarciowe extends JPanel {
 		//Labels//
 		gc.gridx = 0;
 		gc.gridy = 0;
-		gc.weightx = 1;
-		gc.weighty = 1;
-		gc.anchor = GridBagConstraints.SOUTH;
+		gc.anchor = Utils.la();
 		add(mocZwSysLabel, gc);
 		gc.gridx = 0;
-		gc.gridy = 2;
-		gc.weightx = 1;
-		gc.weighty = 1;
-		gc.anchor = GridBagConstraints.SOUTH;
+		gc.gridy ++;
+		gc.anchor = Utils.la();
 		add(napiecieZnSysLabel, gc);
 		gc.gridx = 0;
-		gc.gridy = 4;
-		gc.weightx = 1;
-		gc.weighty = 1;
-		gc.anchor = GridBagConstraints.SOUTH;
+		gc.gridy ++;
+		gc.anchor = Utils.la();
 		add(dlLiniiLabel, gc);
 		gc.gridx = 0;
-		gc.gridy = 6;
-		gc.weightx = 1;
-		gc.weighty = 1;
-		gc.anchor = GridBagConstraints.SOUTH;
+		gc.gridy ++;
+		gc.anchor = Utils.la();
 		add(rJednLabel, gc);
 		gc.gridx = 0;
-		gc.gridy = 8;
-		gc.weightx = 1;
-		gc.weighty = 1;
-		gc.anchor = GridBagConstraints.SOUTH;
+		gc.gridy ++;
+		gc.anchor = Utils.la();
 		add(xJednLabel, gc);
 		
 		//Fields//
-		gc.gridx = 0;
-		gc.gridy = 1;
-		gc.weightx = 1;
-		gc.weighty = 1;
-		gc.anchor = GridBagConstraints.NORTH;		
+		gc.gridx = 1;
+		gc.gridy = 0;		
 		add(mocZwSysField, gc);
-		gc.gridx = 0;
-		gc.gridy = 3;
-		gc.anchor = GridBagConstraints.NORTH;
-		gc.weightx = 1;
-		gc.weighty = 1;
+		gc.gridx = 1;
+		gc.gridy ++;
 		add(napiecieZnSysField, gc);
-		gc.gridx = 0;
-		gc.gridy = 5;
-		gc.weightx = 1;
-		gc.weighty = 1;
-		gc.anchor = GridBagConstraints.NORTH;		
+		gc.gridx = 1;
+		gc.gridy ++;		
 		add(dlLiniiField, gc);
-		gc.gridx = 0;
-		gc.gridy = 7;
-		gc.weightx = 1;
-		gc.weighty = 1;
-		gc.anchor = GridBagConstraints.NORTH;		
+		gc.gridx = 1;
+		gc.gridy ++;
 		add(rJednField, gc);
-		gc.gridx = 0;
-		gc.gridy = 9;
-		gc.weightx = 1;
-		gc.weighty = 1;
-		gc.anchor = GridBagConstraints.NORTH;		
+		gc.gridx = 1;
+		gc.gridy ++;		
 		add(xJednField, gc);
 		
-		//Button 
-		gc.gridx = 1;
-		gc.gridy = 0;
-		gc.weightx = 1;
-		gc.weighty = 4;
-		add(iKbisButton, gc);
-		gc.gridx = 1;
-		gc.gridy = 1;
-		gc.weightx = 1;
-		gc.weighty = 4;
-		add(iKminButton, gc);
+		// Jednostki
+		gc.gridx = 2;
+		gc.gridy = 0;		
+		gc.anchor = Utils.sa();
+		add(Utils.label("   [MVA]"), gc);
+		gc.gridx = 2;
+		gc.gridy ++;
+		gc.anchor = Utils.sa();
+		add(Utils.label("   [kV]"), gc);
+		gc.gridx = 2;
+		gc.gridy ++;		
+		gc.anchor = Utils.sa();
+		add(Utils.label("   [km]"), gc);
+		gc.gridx = 2;
+		gc.gridy ++;
+		gc.anchor = Utils.sa();
+		add(Utils.label("   [om/km]"), gc);
+		gc.gridx = 2;
+		gc.gridy ++;		
+		gc.anchor = Utils.sa();
+		add(Utils.label("   [om/km]"), gc);
+		
+		
+//		//Button 
+//		gc.gridx = 1;
+//		gc.gridy = 0;
+//		gc.weightx = 1;
+//		gc.weighty = 4;
+//		add(iKbisButton, gc);
+//		gc.gridx = 1;
+//		gc.gridy = 1;
+//		gc.weightx = 1;
+//		gc.weighty = 4;
+//		add(iKminButton, gc);
 	
 		//Wyniki
-		gc.gridx = 1;
-		gc.gridy ++;
-		gc.weightx = 1;
-		gc.weighty = 4;
-		add(iKbisLabel, gc);
-		gc.gridx = 1;
-		gc.gridy ++;
-		gc.weightx = 1;
-		gc.weighty = 4;
-		add(iKminLabel, gc);
+//		gc.gridx = 1;
+//		gc.gridy ++;
+//		gc.weightx = 1;
+//		gc.weighty = 4;
+//		add(iKbisLabel, gc);
+//		gc.gridx = 1;
+//		gc.gridy ++;
+//		gc.weightx = 1;
+//		gc.weighty = 4;
+//		add(iKminLabel, gc);
 		
 	}
 
