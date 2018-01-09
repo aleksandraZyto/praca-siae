@@ -17,9 +17,8 @@ public class ResultPanel extends JPanel {
 	public static JLabel iKmin = Utils.label("   =   ?                   ");
 	public static JLabel xZw = Utils.label("   =   ?                   ");
 	public static JLabel zZw = Utils.label("   =   ?                   ");
-//	public static JLabel d = Utils.label("   =   ?                   ");
-//	public static JLabel a = Utils.label("   =   ?                   ");
-//	public static JLabel s = Utils.label("   =   ?                   ");
+	public static JLabel iRBzzwl = Utils.label("   =   ?                   ");
+	public static JLabel iRZwl = Utils.label("   =   ?                   ");
 	
 	public ResultPanel(){
 	
@@ -36,32 +35,28 @@ public class ResultPanel extends JPanel {
 		gc.gridy = 0;
 		gc.gridx = 0;
 		gc.anchor = Utils.la();
-		add(Utils.label("iKbis"), gc);
+		add(Utils.label("Ik''"), gc);
 		gc.gridy ++;
 		gc.gridx = 0;
 		gc.anchor = Utils.la();
-		add(Utils.label("iKmin"), gc);
+		add(Utils.label("Ikmin"), gc);
 		gc.gridy ++;
 		gc.gridx = 0;
 		gc.anchor = Utils.la();
-		add(Utils.label("xZw"), gc);
+		add(Utils.label("Xk"), gc);
 		gc.gridx = 0;
 		gc.gridy++; 
 		gc.anchor = Utils.la();
-		add(Utils.label("zZw"), gc);
-//		gc.gridx = 0;
-//		gc.gridy++;
-//		gc.anchor = Utils.la();
-//		add(Utils.label("Yo>"), gc);
-//		gc.gridx = 0;
-//		gc.gridy++;
-//		gc.anchor = Utils.la();
-//		add(Utils.label("Go> (Gok)"), gc);
-//		gc.gridx = 0;
-//		gc.gridy++;
-//		gc.anchor = Utils.la();
-//		add(Utils.label("Bok"), gc);
-		
+		add(Utils.label("Zk"), gc);
+		gc.gridx = 0;
+		gc.gridy++; 
+		gc.anchor = Utils.la();
+		add(Utils.label("Ir (bezzwł.)"), gc);
+		gc.gridx = 0;
+		gc.gridy++; 
+		gc.anchor = Utils.la();
+		add(Utils.label("Ir (zwł.)"), gc);
+
 		//results
 		gc.gridy = 0;
 		gc.gridx = 1;
@@ -79,21 +74,13 @@ public class ResultPanel extends JPanel {
 		gc.gridy ++;
 		gc.anchor =Utils.sa();
 		add(zZw, gc);
-//		gc.gridx = 1;
-//		gc.gridy++; 
-//		gc.anchor = Utils.sa();
-//		add(i, gc);
-//		gc.gridx = 1;
-//		gc.gridy++;
-//		gc.anchor = Utils.sa();
-//		add(y, gc);
-//		gc.gridx = 1;
-//		gc.gridy++;
-//		gc.anchor = Utils.sa();
-//		add(g, gc);
-//		gc.gridx = 1;
-//		gc.gridy++;
-//		gc.anchor = Utils.sa();
-//		add(b, gc);
+		gc.gridx =  1;
+		gc.gridy ++;
+		gc.anchor =Utils.sa();
+		add(iRBzzwl, gc);
+		gc.gridx =  1;
+		gc.gridy ++;
+		gc.anchor =Utils.sa();
+		add(iRZwl, gc);
 	}
 }

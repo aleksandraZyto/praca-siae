@@ -19,10 +19,12 @@ import projekt.projekt.Utils;
 
 public class DaneZwPanel extends JPanel {
 
-	public double zZw; 
-	public double xZw;
-	public double iKbis;
-	public double iKmin;
+	public static JTextField mocZwSysField;
+	public static JTextField napiecieZnSysField;
+	public static JTextField dlLiniiField;
+	public static JTextField rJednField;
+	public static JTextField xJednField;
+	
 	
 	public DaneZwPanel(){
 
@@ -37,12 +39,6 @@ public class DaneZwPanel extends JPanel {
 		JLabel dlLiniiLabel = new JLabel("Długość zabezpieczanej linii:    ");
 		JLabel rJednLabel = new JLabel("Rezystancja jednostkowa linii:    ");
 		JLabel xJednLabel = new JLabel("Reaktancja jednostkowa linii:    ");
-		
-		final JTextField mocZwSysField = new JTextField(4);
-		final JTextField napiecieZnSysField = new JTextField(4);
-		final JTextField dlLiniiField = new JTextField(4);
-		final JTextField rJednField = new JTextField(4);
-		final JTextField xJednField = new JTextField(4);
 		
 		setLayout(new GridBagLayout());
 		GridBagConstraints gc = new GridBagConstraints();
@@ -73,18 +69,23 @@ public class DaneZwPanel extends JPanel {
 		//Fields//
 		gc.gridx = 1;
 		gc.gridy = 0;		
+		mocZwSysField = Utils.numberField("");
 		add(mocZwSysField, gc);
 		gc.gridx = 1;
 		gc.gridy ++;
+		napiecieZnSysField = Utils.numberField("");
 		add(napiecieZnSysField, gc);
 		gc.gridx = 1;
 		gc.gridy ++;		
+		dlLiniiField = Utils.numberField("");
 		add(dlLiniiField, gc);
 		gc.gridx = 1;
 		gc.gridy ++;
+		rJednField = Utils.numberField("");
 		add(rJednField, gc);
 		gc.gridx = 1;
 		gc.gridy ++;		
+		xJednField = Utils.numberField("");
 		add(xJednField, gc);
 		
 		// Jednostki

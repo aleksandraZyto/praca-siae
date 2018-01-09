@@ -43,15 +43,12 @@ import projekt.projekt.panels.zz.obliczenia.Y;public class ButtonPanel extends J
 		b.addActionListener(new ActionListener() {
 				
 			public void actionPerformed(ActionEvent e) {
-				ResultPanel.iKbis.setText("    =   "+df.format(Bm.wspd()));
-				ResultPanel.iKmin.setText("    =   "+df.format(Bm.a()));
-				ResultPanel.xZw.setText("    =   "+df.format(Bm.s()));
-				ResultPanel.zZw.setText("    =   "+df.format(Bm.s()));
-
-//				ResultPanel.i.setText("    :   "+df.format(I.iMin())+" [A] < Ion < "+df.format(I.iMax())+" [A]"); 
-//				ResultPanel.y.setText("    :   "+df.format(1000*Y.yMin())+" [mS] < Yon < "+df.format(1000*Y.yMax())+" [mS]"); 
-//				ResultPanel.g.setText("    :   "+df.format(1000*G.gMin())+" [mS] < Gon < "+df.format(1000*G.gMax())+" [mS]"); 
-//				ResultPanel.b.setText("    :   "+df.format(1000*B.bMin())+" [mS] < Bon"); 
+				ResultPanel.iKbis.setText("    =   "+df.format(Obliczenia.iKbis()/1000)+"  [kA]");
+				ResultPanel.iKmin.setText("    =   "+df.format(Obliczenia.iKmin()/1000)+"  [kA]");
+				ResultPanel.xZw.setText("    =   "+df.format(Obliczenia.xZw())+"  [om]");
+				ResultPanel.zZw.setText("    =   "+df.format(Obliczenia.zZw())+"  [om]");
+				ResultPanel.iRBzzwl.setText("    =   "+df.format(Obliczenia.iRBzzwl())+"  [A]");
+				ResultPanel.iRZwl.setText("    :   "+df.format(Obliczenia.iRZwlMin())+"  [A]  <  Ir  <  "+df.format(Obliczenia.iRZwlMax())+"  [A]");
 			}
 		});
 	}

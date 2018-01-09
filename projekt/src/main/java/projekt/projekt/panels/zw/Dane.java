@@ -18,9 +18,17 @@ import javax.swing.JTextField;
 
 import projekt.projekt.Utils;
 
-public class ZwlPanel extends JPanel {
+public class Dane extends JPanel {
 		
-	public ZwlPanel(){
+	public static JTextField kb;
+	public static JTextField ks;
+	public static JTextField kp;
+	public static JTextField kr;
+	public static JTextField kc;
+	public static JTextField p;
+	public static JTextField iMax;
+	
+	public Dane(){
 		Dimension size = getPreferredSize();
 		size.height = 200;
 		size.width = 350;
@@ -33,11 +41,6 @@ public class ZwlPanel extends JPanel {
 		JLabel wspCzulLabel = new JLabel("Współczynnik czułości:    ");
 		JLabel przekladniaLabel = new JLabel("Przekładnia przekładnika prądowego:    ");
 		JLabel maksPrObcLabel = new JLabel("Maksymalny prąd obciążenia:    ");
-		
-		final DecimalFormat df = new DecimalFormat("#.###");
-		df.setRoundingMode(RoundingMode.CEILING);
-
-		final JLabel iRLabel = new JLabel("Ir = ");
 		
 		setLayout(new GridBagLayout());
 		GridBagConstraints gc = new GridBagConstraints();	
@@ -75,25 +78,32 @@ public class ZwlPanel extends JPanel {
 		//Field Column	
 		gc.gridx = 1;
 		gc.gridy = 0;
-		add(Utils.numberField("1.3"), gc);	
+		kb = Utils.numberField("1.3");
+		add(kb, gc);	
 		gc.gridx = 1;
 		gc.gridy ++;
-		add(Utils.numberField("1.3"), gc);
+		kc = Utils.numberField("1.3");
+		add(kc, gc);
 		gc.gridx = 1;
 		gc.gridy ++;
-		add(Utils.numberField("0.85"), gc);
+		kp = Utils.numberField("0.85");
+		add(kp, gc);
 		gc.gridx = 1;
 		gc.gridy ++;
-		add(Utils.numberField("1"), gc);
+		ks = Utils.numberField("1");
+		add(ks, gc);
 		gc.gridx = 1;
 		gc.gridy ++;
-		add(Utils.numberField(""), gc);
+		kr = Utils.numberField("");
+		add(kr, gc);
 		gc.gridx = 1;
 		gc.gridy ++;
-		add(Utils.numberField(""), gc);
+		iMax = Utils.numberField("");
+		add(iMax, gc);
 		gc.gridx = 1;
 		gc.gridy ++;
-		add(Utils.numberField(""), gc);
+		p = Utils.numberField("");
+		add(p, gc);
 		
 		//Jednostki
 		gc.gridx = 2;
@@ -125,17 +135,5 @@ public class ZwlPanel extends JPanel {
 		gc.anchor = Utils.sa();
 		add(Utils.label("   [A/A]"), gc);
 		
-		
-//		//Button Row/
-//		gc.gridx = 0;
-//		gc.gridy = 7;
-//		add(obliczButton, gc);
-//		
-//		//Wyniki Row//
-//		gc.gridx = 0;
-//		gc.gridy = 8;
-//		add(iRLabel, gc);
-//				
 	}
-	
 }

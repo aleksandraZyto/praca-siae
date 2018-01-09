@@ -9,12 +9,12 @@ import projekt.projekt.Utils;
 import projekt.projekt.panels.zw.ButtonPanel;
 import projekt.projekt.panels.zw.DaneZwPanel;
 import projekt.projekt.panels.zw.ResultPanel;
-import projekt.projekt.panels.zw.ZwlPanel;
+import projekt.projekt.panels.zw.Dane;
 
 public class ZwarFrame extends JFrame{
 	
 	private DaneZwPanel oblZw;
-	private ZwlPanel zwlPanel;
+	private Dane zwlPanel;
 	private ResultPanel results;
 	private ButtonPanel button;
 	
@@ -25,7 +25,7 @@ public class ZwarFrame extends JFrame{
 		GridBagConstraints gc = new GridBagConstraints();
 
 		oblZw = new DaneZwPanel();
-		zwlPanel = new ZwlPanel();
+		zwlPanel = new Dane();
 		results = new ResultPanel();
 		button = new ButtonPanel();
 		
