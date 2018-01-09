@@ -1,8 +1,9 @@
-package projekt.projekt.stare;
+package projekt.projekt.panels.zw;
 
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.math.RoundingMode;
@@ -10,24 +11,23 @@ import java.text.DecimalFormat;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import projekt.projekt.Utils;
 
-public class ObliczeniaZwarciowe extends JPanel {
+public class OblZwPanel extends JPanel {
 
 	public static double xZw;
 	public static double iKbis;
 	public static double iKmin;
 	
-	public ObliczeniaZwarciowe(){
+	public OblZwPanel(){
 
 		Dimension size = getPreferredSize();
-		size.width = 700;
-		size.height = 300;
+		size.width = 350;
+		size.height = 200;
 		setPreferredSize(size);		
 		setBorder(BorderFactory.createTitledBorder("Obliczenia zwarciowe"));
 		
@@ -150,21 +150,16 @@ public class ObliczeniaZwarciowe extends JPanel {
 		gc.gridx = 2;
 		gc.gridy ++;		
 		gc.anchor = Utils.sa();
-		add(Utils.label("   [om/km]"), gc);
+		add(Utils.label("   [om/km]       "), gc);
 		
-		
-//		//Button 
-//		gc.gridx = 1;
-//		gc.gridy = 0;
-//		gc.weightx = 1;
-//		gc.weighty = 4;
-//		add(iKbisButton, gc);
-//		gc.gridx = 1;
-//		gc.gridy = 1;
-//		gc.weightx = 1;
-//		gc.weighty = 4;
-//		add(iKminButton, gc);
-	
+		//Button
+		JButton iKbis = new JButton("Oblicz nastawy");
+		iKbis.setMargin(new Insets(13,15,13,15));
+		gc.gridx = 3;
+		gc.gridy = 0;
+		gc.gridheight = 4;
+//		add(iKbis, gc);
+
 		//Wyniki
 //		gc.gridx = 1;
 //		gc.gridy ++;

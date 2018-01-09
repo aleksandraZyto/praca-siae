@@ -21,6 +21,7 @@ import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 
 import projekt.projekt.Utils;
+import projekt.projekt.panels.zw.OblZwPanel;
 
 public class Bezzwl extends JPanel {
 		
@@ -50,7 +51,7 @@ public class Bezzwl extends JPanel {
 				
 				Double przekladnia = Utils.textFieldConvert(przekladniaField);
 				Double wspBezp = Utils.cBoxConvert(wspBezpCBox);
-				double iR = ((1.3) * ObliczeniaZwarciowe.iKbis)/przekladnia; 
+				double iR = ((1.3) * OblZwPanel.iKbis)/przekladnia; 
 				iRLabel.setText("Ir = "+df.format(iR)+" [A]");
 			}
 		});

@@ -7,10 +7,11 @@ import java.text.DecimalFormat;
 import javax.swing.JFrame;
 
 import projekt.projekt.panels.WindowChoice;
+import projekt.projekt.panels.zw.OblZwPanel;
 
 public class Mframe extends JFrame {
 	
-	private ObliczeniaZwarciowe oblZw;
+	private OblZwPanel oblZw;
 	private WindowChoice windowChoice;
 	
 	public Mframe(String title){
@@ -19,7 +20,7 @@ public class Mframe extends JFrame {
 		setLayout(new GridBagLayout());
 		GridBagConstraints gc = new GridBagConstraints();
 
-		oblZw = new ObliczeniaZwarciowe();
+		oblZw = new OblZwPanel();
 		windowChoice = new WindowChoice();
 		
 		//Obliczenia zwarciowe
