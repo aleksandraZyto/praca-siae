@@ -13,6 +13,7 @@ import projekt.projekt.panels.zz.obliczenia.Bm;
 
 public class ResultPanel extends JPanel {
 
+<<<<<<< HEAD
 	public static JLabel i = Utils.label("   =   ?                   ");
 	public static JLabel y = Utils.label("   =   ?                   ");
 	public static JLabel g = Utils.label("   =   ?                   ");
@@ -20,6 +21,12 @@ public class ResultPanel extends JPanel {
 	public static JLabel d = Utils.label("   =   ?                   ");
 	public static JLabel a = Utils.label("   =   ?                   ");
 	public static JLabel s = Utils.label("   =   ?                   ");
+=======
+	public static JLabel i  = Utils.label("");
+	public static JLabel y= Utils.label("");
+	public static JLabel g= Utils.label("");
+	public static JLabel b= Utils.label("");
+>>>>>>> 56f9fe6a8aab07420e5af36a53f9caa82ecfece4
 	
 	public ResultPanel(){
 	
@@ -64,6 +71,7 @@ public class ResultPanel extends JPanel {
 		
 		//results
 		gc.gridy = 0;
+<<<<<<< HEAD
 		gc.gridx = 1;
 		gc.anchor = Utils.sa();
 		add(d, gc);
@@ -75,6 +83,10 @@ public class ResultPanel extends JPanel {
 		gc.gridx = 1;
 		gc.anchor = Utils.sa();
 		add(s, gc);
+=======
+		gc.gridx =  1;
+		add(Utils.label(""), gc);
+>>>>>>> 56f9fe6a8aab07420e5af36a53f9caa82ecfece4
 		gc.gridx = 1;
 		gc.gridy++; 
 		gc.anchor = Utils.sa();
