@@ -20,7 +20,7 @@ public class WindowChoice extends JPanel{
 	
 	public WindowChoice(){
 		Dimension size = getPreferredSize();
-		size.height = 450;
+		size.height = 500;
 		size.width = 450;
 		setPreferredSize(size);
 		
@@ -51,7 +51,7 @@ public class WindowChoice extends JPanel{
 		zzButton.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
-				Utils.frameSetting(new ZzFrame("Zabezpieczenia ziemnozwarciowe"), 850, 600);
+				Utils.frameSetting(new ZzFrame("Zabezpieczenia ziemnozwarciowe"), 900, 600);
 			}
 		});
 

@@ -19,6 +19,8 @@ public class ResultPanel extends JPanel {
 	public static JLabel zZw = Utils.label("   =   ?                   ");
 	public static JLabel iRBzzwl = Utils.label("   =   ?                   ");
 	public static JLabel iRZwl = Utils.label("   =   ?                   ");
+	public static JLabel t = Utils.label("   =   ?                   ");
+
 	
 	public ResultPanel(){
 	
@@ -51,11 +53,15 @@ public class ResultPanel extends JPanel {
 		gc.gridx = 0;
 		gc.gridy++; 
 		gc.anchor = Utils.la();
-		add(Utils.label("Ir (bezzwł.)"), gc);
+		add(Utils.label("Ir >>"), gc);
 		gc.gridx = 0;
 		gc.gridy++; 
 		gc.anchor = Utils.la();
-		add(Utils.label("Ir (zwł.)"), gc);
+		add(Utils.label("Ir >"), gc);
+		gc.gridx = 0;
+		gc.gridy++; 
+		gc.anchor = Utils.la();
+		add(Utils.label("t (dla I >)"), gc);
 
 		//results
 		gc.gridy = 0;
@@ -82,5 +88,9 @@ public class ResultPanel extends JPanel {
 		gc.gridy ++;
 		gc.anchor =Utils.sa();
 		add(iRZwl, gc);
+		gc.gridx =  1;
+		gc.gridy ++;
+		gc.anchor =Utils.sa();
+		add(t, gc);
 	}
 }

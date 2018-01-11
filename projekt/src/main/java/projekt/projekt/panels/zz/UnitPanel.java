@@ -19,9 +19,14 @@ public class UnitPanel extends JPanel {
 		setPreferredSize(size);	
 		setLayout(new GridBagLayout());
 		GridBagConstraints gc = new GridBagConstraints();	
-
+	
 		gc.gridx = 0;
 		gc.gridy = 0;
+		gc.ipady = Utils.ipady();
+		gc.anchor = Utils.sa();
+		add(Utils.label("[V]"), gc);
+		gc.gridx = 0;
+		gc.gridy ++;
 		gc.ipady = Utils.ipady();
 		gc.anchor = Utils.sa();
 		add(Utils.label("[-]"), gc);

@@ -4,7 +4,6 @@ import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 
-import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 
 import projekt.projekt.Utils;
@@ -17,6 +16,7 @@ import projekt.projekt.panels.zz.fields.KbPanel;
 import projekt.projekt.panels.zz.fields.KcPanel;
 import projekt.projekt.panels.zz.fields.KpPanel;
 import projekt.projekt.panels.zz.fields.UPanel;
+import projekt.projekt.panels.zz.fields.UnastPanel;
 import projekt.projekt.panels.zz.fields.YPanel;
 
 public class ZzFieldPanel extends JPanel {
@@ -31,9 +31,11 @@ public class ZzFieldPanel extends JPanel {
 	private KpPanel	kpPanel;
 	private IPanel	iPanel;
 	private IdlPanel idlPanel;
+	private UnastPanel uNastPanel;
 	
 	public ZzFieldPanel(){
-	
+		
+		uNastPanel = new UnastPanel();
 		kbPanel = new KbPanel();
 		kcPanel = new KcPanel();
 		kpPanel = new KpPanel();
@@ -53,6 +55,11 @@ public class ZzFieldPanel extends JPanel {
 		setLayout(new GridBagLayout());
 		GridBagConstraints gc = new GridBagConstraints();	
 
+		//unast
+		gc.gridx = 0;
+		gc.gridy ++;
+		add(uNastPanel, gc);
+		
 		//kb
 		gc.gridx = 0;
 		gc.gridy ++;

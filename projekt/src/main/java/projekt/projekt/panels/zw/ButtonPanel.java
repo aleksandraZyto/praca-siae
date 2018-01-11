@@ -39,7 +39,7 @@ import projekt.projekt.panels.zz.obliczenia.Y;public class ButtonPanel extends J
 		
 		final DecimalFormat df = new DecimalFormat("#.###");
 		df.setRoundingMode(RoundingMode.CEILING);
-		
+
 		b.addActionListener(new ActionListener() {
 				
 			public void actionPerformed(ActionEvent e) {
@@ -49,6 +49,8 @@ import projekt.projekt.panels.zz.obliczenia.Y;public class ButtonPanel extends J
 				ResultPanel.zZw.setText("    =   "+df.format(Obliczenia.zZw())+"  [om]");
 				ResultPanel.iRBzzwl.setText("    =   "+df.format(Obliczenia.iRBzzwl())+"  [A]");
 				ResultPanel.iRZwl.setText("    :   "+df.format(Obliczenia.iRZwlMin())+"  [A]  <  Ir  <  "+df.format(Obliczenia.iRZwlMax())+"  [A]");
+				ResultPanel.t.setText("    =   "+df.format(Bm.d(Dane.tdot)+Bm.d(Dane.tot)));
+				
 			}
 		});
 	}

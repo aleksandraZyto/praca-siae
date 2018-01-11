@@ -10,6 +10,7 @@ import projekt.projekt.panels.zz.LabelsPanel;
 import projekt.projekt.panels.zz.ResultPanel;
 import projekt.projekt.panels.zz.TitlePanel;
 import projekt.projekt.panels.zz.UnitPanel;
+import projekt.projekt.panels.zz.WspResultPanel;
 import projekt.projekt.panels.zz.ZzFieldPanel;
 import projekt.projekt.panels.zz.obliczenia.ButtonPanel;
 
@@ -20,8 +21,9 @@ public class ZzFrame extends JFrame{
 	private HFPanel hfPanel;
 	private TitlePanel titlePanel;
 	private UnitPanel unitPanel;
-	private ResultPanel resultPanel;
+	private WspResultPanel wspResultPanel;
 	private ButtonPanel buttonPanel;
+	private ResultPanel rPanel;
 	
 	public ZzFrame(String title){
 		super(title);
@@ -34,8 +36,11 @@ public class ZzFrame extends JFrame{
 		hfPanel = new HFPanel();
 		titlePanel = new TitlePanel();
 		unitPanel = new UnitPanel();
-		resultPanel = new ResultPanel();
+		wspResultPanel = new WspResultPanel();
 		buttonPanel = new ButtonPanel();
+		rPanel = new ResultPanel();
+		
+		
 		
 		gc.gridx = 1;
 		gc.gridy = 0;
@@ -45,11 +50,17 @@ public class ZzFrame extends JFrame{
 		gc.gridy = 3;
 		add(buttonPanel, gc);
 		
-		gc.gridx = 0;
-		gc.gridy = 3;
-		gc.anchor = GridBagConstraints.EAST;
-		add(resultPanel, gc);
+//		gc.gridx = 0;
+//		gc.gridy = 4;
+////		gc.gridwidth = 2;
+//		gc.anchor = GridBagConstraints.EAST;
+//		add(rPanel, gc);
 		
+//		gc.gridx = 1;
+//		gc.gridy = 4;
+//		gc.anchor = GridBagConstraints.EAST;
+//		add(rPanel, gc);
+			
 		gc.gridx = 2;
 		gc.gridy = 2;
 		add(unitPanel, gc);

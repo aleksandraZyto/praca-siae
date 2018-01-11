@@ -3,17 +3,9 @@ package projekt.projekt.panels.zw;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
 
-import javax.swing.BorderFactory;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import projekt.projekt.Utils;
@@ -27,10 +19,13 @@ public class Dane extends JPanel {
 	public static JTextField kc;
 	public static JTextField p;
 	public static JTextField iMax;
+	public static JTextField tot;
+	public static JTextField tdot;
+	
 	
 	public Dane(){
 		Dimension size = getPreferredSize();
-		size.height = 200;
+		size.height = 250;
 		size.width = 350;
 		setPreferredSize(size);
 		
@@ -41,6 +36,8 @@ public class Dane extends JPanel {
 		JLabel wspCzulLabel = new JLabel("Współczynnik czułości:    ");
 		JLabel przekladniaLabel = new JLabel("Przekładnia przekładnika prądowego:    ");
 		JLabel maksPrObcLabel = new JLabel("Maksymalny prąd obciążenia:    ");
+		JLabel totLabel = new JLabel("Czas otwierania się wyłącznika:    ");
+		JLabel tdotLabel = new JLabel("Czas dodatkowy:    ");
 		
 		setLayout(new GridBagLayout());
 		GridBagConstraints gc = new GridBagConstraints();	
@@ -74,6 +71,14 @@ public class Dane extends JPanel {
 		gc.gridy ++;
 		gc.anchor = Utils.la();
 		add(przekladniaLabel, gc);
+		gc.gridx = 0;
+		gc.gridy ++;
+		gc.anchor = Utils.la();
+		add(totLabel, gc);
+		gc.gridx = 0;
+		gc.gridy ++;
+		gc.anchor = Utils.la();
+		add(tdotLabel, gc);
 				
 		//Field Column	
 		gc.gridx = 1;
@@ -104,6 +109,14 @@ public class Dane extends JPanel {
 		gc.gridy ++;
 		p = Utils.numberField("");
 		add(p, gc);
+		gc.gridx = 1;
+		gc.gridy ++;
+		tot = Utils.numberField("0.3");
+		add(tot, gc);
+		gc.gridx = 1;
+		gc.gridy ++;
+		tdot = Utils.numberField("0.2");
+		add(tdot, gc);
 		
 		//Jednostki
 		gc.gridx = 2;
@@ -134,6 +147,13 @@ public class Dane extends JPanel {
 		gc.gridy ++;
 		gc.anchor = Utils.sa();
 		add(Utils.label("   [A/A]"), gc);
-		
+		gc.gridx = 2;
+		gc.gridy ++;
+		gc.anchor = Utils.sa();
+		add(Utils.label("   [s]"), gc);
+		gc.gridx = 2;
+		gc.gridy ++;
+		gc.anchor = Utils.sa();
+		add(Utils.label("   [s]"), gc);
 	}
 }

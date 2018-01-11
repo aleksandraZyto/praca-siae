@@ -24,6 +24,11 @@ public class LabelsPanel extends JPanel {
 		gc.gridy = 0;
 		gc.ipady = Utils.ipady();
 		gc.anchor = Utils.la();
+		add(Utils.label("Nastawa zeronapięciowa człony rozruchowego"), gc);
+		gc.gridx = 0;
+		gc.gridy ++;
+		gc.ipady = Utils.ipady();
+		gc.anchor = Utils.la();
 		add(Utils.label("Współczynnik bezpieczeństwa:"), gc);
 		gc.gridx = 0;
 		gc.gridy ++;

@@ -20,7 +20,7 @@ public class TitlePanel extends JPanel {
 //		setBorder(BorderFactory.createTitledBorder(""));		
 		setLayout(new GridBagLayout());
 		GridBagConstraints gc = new GridBagConstraints();	
-		setBackground(Utils.color2());
+//		setBackground(Utils.color());
 		
 		gc.gridx = 0;
 		gc.gridy = 0;
@@ -30,9 +30,9 @@ public class TitlePanel extends JPanel {
 		add(Utils.label("Yo >                  "), gc);
 		gc.gridx ++;
 		gc.gridy = 0;
-		add(Utils.label("Bok >            "), gc);
+		add(Utils.label("Bok              "), gc);
 		gc.gridx ++;
 		gc.gridy = 0;
-		add(Utils.label("Go> (Gok >)"), gc);
+		add(Utils.label("   Go>        "), gc);
 	}
 }

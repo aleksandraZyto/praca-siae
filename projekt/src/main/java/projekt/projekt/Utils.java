@@ -27,7 +27,7 @@ public class Utils {
 	}
 	
 	public static int columnHeight(){
-		return 310;
+		return 330;
 	}
 	
 	public static int fa(){

@@ -5,91 +5,111 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 
 import javax.swing.BorderFactory;
-import javax.swing.JLabel;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import projekt.projekt.Utils;
-import projekt.projekt.panels.zz.obliczenia.Bm;
+import projekt.projekt.panels.zz.results.BGok;
+import projekt.projekt.panels.zz.results.Bok;
+import projekt.projekt.panels.zz.results.Go;
+import projekt.projekt.panels.zz.results.Gok;
+import projekt.projekt.panels.zz.results.Ib;
+import projekt.projekt.panels.zz.results.Icz;
+import projekt.projekt.panels.zz.results.Io;
+import projekt.projekt.panels.zz.results.YGo;
+import projekt.projekt.panels.zz.results.Yo;
 
 public class ResultPanel extends JPanel {
 
-	public static JLabel i = Utils.label("   =   ?                   ");
-	public static JLabel y = Utils.label("   =   ?                   ");
-	public static JLabel g = Utils.label("   =   ?                   ");
-	public static JLabel b = Utils.label("   =   ?                   ");
-	public static JLabel d = Utils.label("   =   ?                   ");
-	public static JLabel a = Utils.label("   =   ?                   ");
-	public static JLabel s = Utils.label("   =   ?                   ");
+	private Io io;
+	private Icz iocz;
+	private Ib iob;
+	private Yo yo;
+	private Go go;
+	private Bok bok;
+	private Gok gok;
+	private BGok bgok;
+	private YGo ygo;
 	
 	public ResultPanel(){
 	
+		io = new Io();
+		iocz = new Icz();
+		iob = new Ib();
+		yo = new Yo();
+		go = new Go();
+		bok = new Bok();
+		gok = new Gok();
+		bgok = new BGok();
+		ygo = new YGo();
+		JButton button = new JButton("Pokaż charakterystykę");
+		
 		Dimension size = getPreferredSize();
-		size.height = 140;
-		size.width = 280;
+		size.height = 900;
+		size.width = 350;
 		setPreferredSize(size);	
 		setLayout(new GridBagLayout());
-		setBorder(BorderFactory.createTitledBorder("Obliczone nastawy i współczynniki"));
+		setBorder(BorderFactory.createTitledBorder("Obliczone nastawy"));
 		GridBagConstraints gc = new GridBagConstraints();	
 
-		//labels
+		gc.gridy = 0;
+		gc.gridx = 0;
+		gc.anchor = Utils.sa();
+		add(io, gc);
 
-		gc.gridy = 0;
-		gc.gridx = 0;
-		gc.anchor = Utils.la();
-		add(Utils.label("d"), gc);
 		gc.gridy ++;
 		gc.gridx = 0;
-		gc.anchor = Utils.la();
-		add(Utils.label("a"), gc);
-		gc.gridy ++;
-		gc.gridx = 0;
-		gc.anchor = Utils.la();
-		add(Utils.label("s"), gc);
-		gc.gridx = 0;
-		gc.gridy++; 
-		gc.anchor = Utils.la();
-		add(Utils.label("Io>"), gc);
-		gc.gridx = 0;
-		gc.gridy++;
-		gc.anchor = Utils.la();
-		add(Utils.label("Yo>"), gc);
-		gc.gridx = 0;
-		gc.gridy++;
-		gc.anchor = Utils.la();
-		add(Utils.label("Go> (Gok)"), gc);
-		gc.gridx = 0;
-		gc.gridy++;
-		gc.anchor = Utils.la();
-		add(Utils.label("Bok"), gc);
+		gc.anchor = Utils.sa();
+//		gc.anchor = GridBagConstraints.PAGE_START;
+		add(iocz, gc);
 		
-		//results
-		gc.gridy = 0;
-		gc.gridx = 1;
-		gc.anchor = Utils.sa();
-		add(d, gc);
 		gc.gridy ++;
-		gc.gridx = 1;
+		gc.gridx = 0;
 		gc.anchor = Utils.sa();
-		add(a, gc);
+//		gc.anchor = GridBagConstraints.FIRST_LINE_END;
+		add(iob, gc);
+	
 		gc.gridy ++;
-		gc.gridx = 1;
+		gc.gridx = 0;
 		gc.anchor = Utils.sa();
-		add(s, gc);
-		gc.gridx = 1;
-		gc.gridy++; 
+//		gc.anchor = GridBagConstraints.LINE_START;
+		add(yo, gc);
+	
+		gc.gridy ++;
+		gc.gridx = 0;
 		gc.anchor = Utils.sa();
-		add(i, gc);
-		gc.gridx = 1;
-		gc.gridy++;
+//		gc.anchor = GridBagConstraints.CENTER;
+		add(go, gc);
+		
+		gc.gridy ++;
+		gc.gridx = 0;
 		gc.anchor = Utils.sa();
-		add(y, gc);
-		gc.gridx = 1;
-		gc.gridy++;
+//		gc.anchor = GridBagConstraints.LINE_END;
+		add(bok, gc);
+		
+		gc.gridy ++;
+		gc.gridx = 0;
 		gc.anchor = Utils.sa();
-		add(g, gc);
-		gc.gridx = 1;
-		gc.gridy++;
+//		gc.anchor = GridBagConstraints.LAST_LINE_START;
+		add(gok, gc);
+		
+		gc.gridy ++;
+		gc.gridx = 0;
 		gc.anchor = Utils.sa();
-		add(b, gc);
-	}
+//		gc.anchor = GridBagConstraints.PAGE_END;
+		add(gok, gc);
+		
+		gc.gridy ++;
+		gc.gridx = 0;
+		gc.anchor = Utils.sa();
+//		gc.anchor = GridBagConstraints.LAST_LINE_END;
+		add(bgok, gc);
+
+		gc.gridy ++;
+		gc.gridx = 0;
+		gc.anchor = Utils.sa();
+		add(ygo, gc);
+		
+	///////////////////////////////////
+			}
 }

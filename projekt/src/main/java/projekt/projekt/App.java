@@ -14,7 +14,7 @@ public class App{
 			
 			public void run() {
 				JFrame frame = new MainFrame("Nastawy zabezpieczeń linii SN");
-				Utils.frameSetting(frame, 500, 500);
+				Utils.frameSetting(frame, 500, 550);
 				System.out.println("");
 
 			}
