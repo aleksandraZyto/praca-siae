@@ -20,7 +20,7 @@ public class WindowChoice extends JPanel{
 	
 	public WindowChoice(){
 		Dimension size = getPreferredSize();
-		size.height = 500;
+		size.height = 350;
 		size.width = 450;
 		setPreferredSize(size);
 		
@@ -64,7 +64,7 @@ public class WindowChoice extends JPanel{
 		
 		l.setHgap(30);
 	
-		add(przecButton, l);
+//		add(przecButton, l);
 		add(zwarButton, l);
 		add(zzButton, l);
 

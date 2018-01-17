@@ -16,7 +16,7 @@ public class App{
 				
 				JFrame frame = new MainFrame("Nastawy zabezpieczeń linii SN");
 				frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-				Utils.frameSetting(frame, 500, 550);
+				Utils.frameSetting(frame, 500, 400);
 				System.out.println("");
 
 			}
