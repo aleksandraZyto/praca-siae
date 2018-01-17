@@ -1,4 +1,4 @@
-package projekt.projekt.panels.images;
+package projekt.projekt.panels.zw;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -14,17 +14,18 @@ import javax.swing.JPanel;
 import projekt.projekt.panels.zz.ResultPanel;
 
 
-public class CharPanel extends JPanel{
+public class CharPanelZw extends JPanel{
 	
 	public static GridBagConstraints gc = new GridBagConstraints();
 	 
+	 
 	public static JLabel l = new JLabel();
 	 
-	public CharPanel() throws IOException {
+	public CharPanelZw() throws IOException {
 		super();
 		setLayout(new GridBagLayout());
 		
-	    l.setIcon(new ImageIcon("src/icons/io.png"));
+	    l.setIcon(new ImageIcon("src/icons/bez.png"));
 		gc.gridx = 0;
 		gc.gridy = 0;
 		add(l, gc);		

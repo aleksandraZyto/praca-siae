@@ -9,37 +9,53 @@ import java.awt.event.ActionListener;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import projekt.projekt.Utils;
-import projekt.projekt.panels.zw.ResultPanel;
-import projekt.projekt.panels.zz.obliczenia.B;
-import projekt.projekt.panels.zz.obliczenia.Bm;
-import projekt.projekt.panels.zz.obliczenia.G;
-import projekt.projekt.panels.zz.obliczenia.I;
-import projekt.projekt.panels.zz.obliczenia.Y;public class ButtonPanel extends JPanel {
+import projekt.projekt.panels.images.CharPanel;
+import projekt.projekt.panels.zz.obliczenia.Bm;public class ButtonPanel extends JPanel {
 
 	public JButton b;
+	 private static  String zwl = "src/icons/zwl.png";
+	 private static  String bez = "src/icons/bez.png"; 
 	public ButtonPanel(){
 	
 		Dimension size = getPreferredSize();
-		size.height = 50;
-		size.width = Utils.secRowWidth();
+		size.height = 140;
+		size.width = 350;
 		setPreferredSize(size);
 //		setBorder(BorderFactory.createTitledBorder(""));		
 		setLayout(new GridBagLayout());
 		GridBagConstraints gc = new GridBagConstraints();	
 		
-		gc.gridx = 0;
-		gc.gridy = 0;
-		b = new JButton("Oblicz nastawy");
-		b.setMargin(new Insets(13,15,13,15));
-		add(b, gc);
 		
 		final DecimalFormat df = new DecimalFormat("#.###");
 		df.setRoundingMode(RoundingMode.CEILING);
 
+//		JLabel label = new JLabel("<html>W celu obliczenia nastaw<br/>należy wypełnić wszytskie<br/>wymagane pola</html>");
+//		label.setFont (label.getFont ().deriveFont (10.0f));
+		
+				
+//		gc.gridx = 0;
+//		gc.gridy =0;
+//		add(label, gc);
+		
+		gc.gridx = 1;
+		gc.gridy =0;
+		add(Utils.label("  "), gc);
+		
+		b = new JButton("Oblicz nastawy prądowe");
+		b.setMargin(new Insets(15,15,15,15));
+		gc.gridx = 2;
+		gc.gridy = 0;
+		gc.gridwidth =2;
+		add(b, gc);
+		///////////
+		
 		b.addActionListener(new ActionListener() {
 				
 			public void actionPerformed(ActionEvent e) {
@@ -49,7 +65,7 @@ import projekt.projekt.panels.zz.obliczenia.Y;public class ButtonPanel extends J
 				ResultPanel.zZw.setText("    =   "+df.format(Obliczenia.zZw())+"  [om]");
 				ResultPanel.iRBzzwl.setText("    =   "+df.format(Obliczenia.iRBzzwl())+"  [A]");
 				ResultPanel.iRZwl.setText("    :   "+df.format(Obliczenia.iRZwlMin())+"  [A]  <  Ir  <  "+df.format(Obliczenia.iRZwlMax())+"  [A]");
-				ResultPanel.t.setText("    =   "+df.format(Bm.d(Dane.tdot)+Bm.d(Dane.tot)));
+				ResultPanel.t.setText("    =   "+df.format(Bm.d(Dane.tdot)+Bm.d(Dane.tot)) +" [s]");
 				
 			}
 		});

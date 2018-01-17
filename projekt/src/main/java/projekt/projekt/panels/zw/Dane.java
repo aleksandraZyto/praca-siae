@@ -25,7 +25,7 @@ public class Dane extends JPanel {
 	
 	public Dane(){
 		Dimension size = getPreferredSize();
-		size.height = 250;
+		size.height = 300;
 		size.width = 350;
 		setPreferredSize(size);
 		
@@ -99,15 +99,15 @@ public class Dane extends JPanel {
 		add(ks, gc);
 		gc.gridx = 1;
 		gc.gridy ++;
-		kr = Utils.numberField("");
+		kr = Utils.numberField(" ");
 		add(kr, gc);
 		gc.gridx = 1;
 		gc.gridy ++;
-		iMax = Utils.numberField("");
+		iMax = Utils.numberField(" ");
 		add(iMax, gc);
 		gc.gridx = 1;
 		gc.gridy ++;
-		p = Utils.numberField("");
+		p = Utils.numberField(" ");
 		add(p, gc);
 		gc.gridx = 1;
 		gc.gridy ++;

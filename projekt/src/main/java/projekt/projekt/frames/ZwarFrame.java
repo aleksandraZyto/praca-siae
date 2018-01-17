@@ -2,14 +2,17 @@ package projekt.projekt.frames;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.io.IOException;
 
 import javax.swing.JFrame;
 
 import projekt.projekt.Utils;
 import projekt.projekt.panels.zw.ButtonPanel;
+import projekt.projekt.panels.zw.CharPanelZw;
+import projekt.projekt.panels.zw.CharWyb;
+import projekt.projekt.panels.zw.Dane;
 import projekt.projekt.panels.zw.DaneZwPanel;
 import projekt.projekt.panels.zw.ResultPanel;
-import projekt.projekt.panels.zw.Dane;
 
 public class ZwarFrame extends JFrame{
 	
@@ -17,7 +20,8 @@ public class ZwarFrame extends JFrame{
 	private Dane zwlPanel;
 	private ResultPanel results;
 	private ButtonPanel button;
-	
+	private CharPanelZw charN;
+	private CharWyb charwyb;
 	public ZwarFrame(String title){
 		super(title);
 	
@@ -28,6 +32,14 @@ public class ZwarFrame extends JFrame{
 		zwlPanel = new Dane();
 		results = new ResultPanel();
 		button = new ButtonPanel();
+		charwyb = new CharWyb();
+		
+		try {
+			charN = new CharPanelZw();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		gc.fill = GridBagConstraints.VERTICAL;
 		gc.gridx = 0;
@@ -46,5 +58,16 @@ public class ZwarFrame extends JFrame{
 		gc.gridy = 1;
 		gc.anchor = Utils.la();
 		add(results, gc);
+		
+		gc.gridx = 2;
+		gc.gridy = 0;
+		add(charN, gc);
+		
+		gc.gridx = 2;
+		gc.gridy = 1;
+		gc.anchor = GridBagConstraints.CENTER;
+		add(charwyb, gc);
+		
+		
 	}
 }

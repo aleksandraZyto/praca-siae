@@ -45,7 +45,7 @@ public class WindowChoice extends JPanel{
 			
 			public void actionPerformed(ActionEvent e) {
 				JFrame frame = new ZwarFrame("Zabezpieczenia zwarciowe");
-				Utils.frameSetting(frame, 800, 500);
+				Utils.frameSetting(frame, 1300, 500);
 				frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 			}
 		});

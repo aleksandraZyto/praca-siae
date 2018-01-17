@@ -30,7 +30,7 @@ public class DaneZwPanel extends JPanel {
 
 		Dimension size = getPreferredSize();
 		size.width = 350;
-		size.height = 200;
+		size.height = 300;
 		setPreferredSize(size);		
 		setBorder(BorderFactory.createTitledBorder("Obliczenia zwarciowe"));
 		
