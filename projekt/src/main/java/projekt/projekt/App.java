@@ -13,7 +13,9 @@ public class App{
     	SwingUtilities.invokeLater(new Runnable() {
 			
 			public void run() {
+				
 				JFrame frame = new MainFrame("Nastawy zabezpieczeń linii SN");
+				frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 				Utils.frameSetting(frame, 500, 550);
 				System.out.println("");
 

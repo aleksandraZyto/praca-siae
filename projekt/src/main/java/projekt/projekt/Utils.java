@@ -1,23 +1,34 @@
 package projekt.projekt;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.text.NumberFormat;
 import java.util.List;
 
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
-import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+import projekt.projekt.panels.zz.ZzFieldPanel;
+
 public class Utils {
 	
+	public static boolean isFieldEmpty(){
+		boolean flag = true;
+		
+		for (int i = 0; i < ZzFieldPanel.pola.size(); i++) {
+			if (ZzFieldPanel.pola.get(i).getText().isEmpty()){
+				flag = true;
+			}else{
+				flag =  false;
+			}
+		}
+		return flag;
+	}
 	
 	public static int secRowWidth(){
 		return 500;

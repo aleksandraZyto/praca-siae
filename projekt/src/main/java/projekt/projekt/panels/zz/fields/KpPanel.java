@@ -14,6 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import projekt.projekt.Utils;
+import projekt.projekt.panels.zz.ZzFieldPanel;
 
 public class KpPanel extends JPanel{
 	
@@ -44,6 +45,7 @@ public class KpPanel extends JPanel{
 			gc.gridy = 0;
 			add(Utils.label("                "), gc);
 		}
-		
+
+		ZzFieldPanel.pola.add(field);
 	}
 }

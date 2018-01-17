@@ -10,6 +10,9 @@ import javax.swing.JPanel;
 
 public class UwagaPanel extends JPanel{
 
+	
+	public static JLabel uwaga;
+	
 	public UwagaPanel(){
 		Dimension size = getPreferredSize();
 		size.height = 105;
@@ -23,6 +26,7 @@ public class UwagaPanel extends JPanel{
 		label1.setFont (label1.getFont ().deriveFont (16.0f));
 		JLabel label3 = new JLabel("wymagane pola!");
 		label3.setFont (label3.getFont ().deriveFont (16.0f));
+		uwaga = new JLabel("");
 		
 		
 		
@@ -35,5 +39,8 @@ public class UwagaPanel extends JPanel{
 		gc.gridx = 0;
 		gc.gridy = 2;
 		add(label3, gc);
+		gc.gridx = 0;
+		gc.gridy = 3;
+		add(uwaga, gc);
 	}
 }

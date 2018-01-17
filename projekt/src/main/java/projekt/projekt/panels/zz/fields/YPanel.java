@@ -11,6 +11,7 @@ import javax.swing.JTextField;
 
 import projekt.projekt.Utils;
 import projekt.projekt.panels.zz.HFPanel;
+import projekt.projekt.panels.zz.ZzFieldPanel;
 
 public class YPanel extends JPanel{
 	
@@ -97,5 +98,12 @@ public class YPanel extends JPanel{
 			f6.setToolTipText("<html>zalecana wartość:<br/>dla układu Holmgreena: 2-2,5 mS<br/>dla przekładnika Ferrantiego: 0,6-0,8 mS</html>");
 			Utils.zzInputFields(f6, admitUchybFields);
 
+
+			ZzFieldPanel.pola.add(f1);
+			ZzFieldPanel.pola.add(f2);
+			ZzFieldPanel.pola.add(f3);
+			ZzFieldPanel.pola.add(f4);
+			ZzFieldPanel.pola.add(f5);
+			ZzFieldPanel.pola.add(f6);
 	}
 }

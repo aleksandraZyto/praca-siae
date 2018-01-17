@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import projekt.projekt.Utils;
+import projekt.projekt.panels.zz.ZzFieldPanel;
 
 public class KbPanel extends JPanel{
 	
@@ -82,6 +83,14 @@ public class KbPanel extends JPanel{
 		gc.gridy = 0;
 		f7 = Utils.numberField("");
 		add(f7, gc);
+
+		ZzFieldPanel.pola.add(f1);
+		ZzFieldPanel.pola.add(f2);
+		ZzFieldPanel.pola.add(f3);
+		ZzFieldPanel.pola.add(f4);
+		ZzFieldPanel.pola.add(f5);
+		ZzFieldPanel.pola.add(f6);
+		ZzFieldPanel.pola.add(f7);
 		
 	}
 }

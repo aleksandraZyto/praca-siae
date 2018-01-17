@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import projekt.projekt.Utils;
+import projekt.projekt.panels.zz.ZzFieldPanel;
 
 public class UnastPanel extends JPanel{
 	
@@ -92,6 +93,13 @@ public class UnastPanel extends JPanel{
 		f6.setToolTipText("<html>zalecana wartość: 12-15 [V] ");
 		Utils.zzInputFields(f6, uNastFields);
 	
+
+		ZzFieldPanel.pola.add(f1);
+		ZzFieldPanel.pola.add(f2);
+		ZzFieldPanel.pola.add(f3);
+		ZzFieldPanel.pola.add(f4);
+		ZzFieldPanel.pola.add(f5);
+		ZzFieldPanel.pola.add(f6);
 			
 			
 	}

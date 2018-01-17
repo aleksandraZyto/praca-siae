@@ -44,14 +44,18 @@ public class WindowChoice extends JPanel{
 		zwarButton.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
-				Utils.frameSetting(new ZwarFrame("Zabezpieczenia zwarciowe"), 800, 500);
+				JFrame frame = new ZwarFrame("Zabezpieczenia zwarciowe");
+				Utils.frameSetting(frame, 800, 500);
+				frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 			}
 		});
 
 		zzButton.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
-				Utils.frameSetting(new ZzFrame("Zabezpieczenia ziemnozwarciowe"), 1000, 600);
+				JFrame frame = new ZzFrame("Zabezpieczenia ziemnozwarciowe");
+				Utils.frameSetting(frame, 1000, 600);
+				frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 			}
 		});
 

@@ -9,6 +9,7 @@ import javax.swing.JTextField;
 
 import projekt.projekt.Utils;
 import projekt.projekt.panels.zz.HFPanel;
+import projekt.projekt.panels.zz.ZzFieldPanel;
 
 public class IPanel extends JPanel{
 	 
@@ -50,6 +51,10 @@ public class IPanel extends JPanel{
 			
 			add(Utils.label("                "), gc);
 		}
+		
+
+		ZzFieldPanel.pola.add(field1);
+		ZzFieldPanel.pola.add(field2);
 		
 	}
 }

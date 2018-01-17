@@ -14,6 +14,7 @@ public class MainFrame extends JFrame{
 		FlowLayout l = new FlowLayout();
 		setLayout(l);
 		
+		
 		windowChoice = new WindowChoice();
 		add(windowChoice, l);
 	}

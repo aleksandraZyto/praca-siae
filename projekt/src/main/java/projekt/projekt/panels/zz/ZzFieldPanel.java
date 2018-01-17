@@ -1,12 +1,13 @@
  package projekt.projekt.panels.zz;
 
-import java.awt.Container;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 import projekt.projekt.Utils;
 import projekt.projekt.panels.zz.fields.IPanel;
@@ -35,6 +36,8 @@ public class ZzFieldPanel extends JPanel {
 	private IdlPanel idlPanel;
 	private UnastPanel uNastPanel;
 	public static GridBagConstraints gc;
+	
+	public static List<JTextField> pola = new ArrayList<JTextField>();
 	
 	public ZzFieldPanel(){
 		

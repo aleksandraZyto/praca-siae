@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import projekt.projekt.Utils;
+import projekt.projekt.panels.zz.ZzFieldPanel;
 
 public class UPanel extends JPanel{
 	
@@ -93,6 +94,13 @@ public class UPanel extends JPanel{
 		add(f6, gc);
 		f6.setToolTipText("<html>zalecana wartość: <br/>100V (jeśli prąd pojemnościowy zwarcia był obliczony dla napięcia nominalnego)<br/>105V (jeśli prąd pojemnościowy zwarcia był obliczony dla napięcia roboczego)<br/></html>");
 		Utils.zzInputFields(f6, napLiniiFields);
-		
+	
+
+		ZzFieldPanel.pola.add(f1);
+		ZzFieldPanel.pola.add(f2);
+		ZzFieldPanel.pola.add(f3);
+		ZzFieldPanel.pola.add(f4);
+		ZzFieldPanel.pola.add(f5);
+		ZzFieldPanel.pola.add(f6);
 	}
 }

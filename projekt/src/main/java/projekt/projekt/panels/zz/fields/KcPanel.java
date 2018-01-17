@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import projekt.projekt.Utils;
+import projekt.projekt.panels.zz.ZzFieldPanel;
 
 public class KcPanel extends JPanel{
 	
@@ -85,5 +86,13 @@ public class KcPanel extends JPanel{
 		f7.setToolTipText("zalecana wartość: co najmniej 1,2");
 		add(f7, gc);
 		
+
+		ZzFieldPanel.pola.add(f1);
+		ZzFieldPanel.pola.add(f2);
+		ZzFieldPanel.pola.add(f3);
+		ZzFieldPanel.pola.add(f4);
+		ZzFieldPanel.pola.add(f5);
+		ZzFieldPanel.pola.add(f6);
+		ZzFieldPanel.pola.add(f7);
 	}
 }

@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import projekt.projekt.Utils;
+import projekt.projekt.panels.zz.ZzFieldPanel;
 
 public class IrPanel extends JPanel{
 
@@ -86,7 +87,12 @@ public class IrPanel extends JPanel{
 			add(f4, gc);
 			Utils.zzInputFields(f4, prRezLiniiFields);
 			
-			
+
+			ZzFieldPanel.pola.add(f1);
+			ZzFieldPanel.pola.add(f0);
+			ZzFieldPanel.pola.add(f2);
+			ZzFieldPanel.pola.add(f3);
+			ZzFieldPanel.pola.add(f4);
 	
 	}
 }

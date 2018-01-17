@@ -11,13 +11,14 @@ import java.math.RoundingMode;
 import java.text.DecimalFormat;
 
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import projekt.projekt.Utils;
 import projekt.projekt.frames.ZzResultFrame;
 import projekt.projekt.panels.zz.HFPanel;
+import projekt.projekt.panels.zz.UwagaPanel;
 import projekt.projekt.panels.zz.WspResultPanel;
-import projekt.projekt.panels.zz.fields.UPanel;
 import projekt.projekt.panels.zz.fields.UnastPanel;
 import projekt.projekt.panels.zz.results.Bok;
 import projekt.projekt.panels.zz.results.Go;
@@ -58,6 +59,9 @@ public class ButtonPanel extends JPanel {
 				
 			public void actionPerformed(ActionEvent e) {
 
+				if (Utils.isFieldEmpty()){
+					UwagaPanel.uwaga.setText("Uzupełnij wszystkie pola!");
+				}else{
 				WspResultPanel.d.setText("d    =   "+df.format(Bm.wspd()));
 				WspResultPanel.a.setText("a    =   "+df.format(Bm.a()));
 				WspResultPanel.s.setText("s    =   "+df.format(Bm.s()));
@@ -176,11 +180,14 @@ public class ButtonPanel extends JPanel {
 				
 				
 					try {
-						Utils.frameSetting(new ZzResultFrame("Zabezpieczenia ziemnozwarciowe"), 800, 500);
+						JFrame frame = new ZzResultFrame("Zabezpieczenia ziemnozwarciowe");
+						frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+						Utils.frameSetting(frame, 800, 500);
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
+				}
 				
 		}
 		});
