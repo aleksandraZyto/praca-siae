@@ -35,14 +35,6 @@ import projekt.projekt.panels.zz.obliczenia.Bm;public class ButtonPanel extends 
 		
 		final DecimalFormat df = new DecimalFormat("#.###");
 		df.setRoundingMode(RoundingMode.CEILING);
-
-//		JLabel label = new JLabel("<html>W celu obliczenia nastaw<br/>należy wypełnić wszytskie<br/>wymagane pola</html>");
-//		label.setFont (label.getFont ().deriveFont (10.0f));
-		
-				
-//		gc.gridx = 0;
-//		gc.gridy =0;
-//		add(label, gc);
 		
 		gc.gridx = 1;
 		gc.gridy =0;
