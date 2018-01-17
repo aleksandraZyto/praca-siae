@@ -18,15 +18,15 @@ public class Bm {
 	}
 	
 	public static double wspd(){
-		return d(IrPanel.field)/d(IcsPanel.field);
+		return d(IrPanel.f1)/d(IcsPanel.f1);
 	}
 	
 	public static double a(){
-		return d(IcPanel.field)/d(IcsPanel.field);
+		return d(IcPanel.f1)/d(IcsPanel.f1);
 	}
 	
 	public static double s(){
-		return (d(IdlPanel.field)-d(IcsPanel.field))/d(IcsPanel.field);
+		return (d(IdlPanel.f2)-d(IcsPanel.f1))/d(IcsPanel.f1);
 	}
 	public static double d(JTextField x){
 		return Double.parseDouble(x.getText());

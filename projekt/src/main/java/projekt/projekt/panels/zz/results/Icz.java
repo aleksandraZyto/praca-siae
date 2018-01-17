@@ -15,8 +15,8 @@ import projekt.projekt.panels.zz.obliczenia.I;
 public class Icz extends JPanel {
 
 	
-	public static JLabel i = Utils.label("? < Iop < ?");
-	public static JLabel u = Utils.label("? < Uop");
+	public static JLabel i = Utils.label("? < Ion < ?");
+	public static JLabel u = Utils.label("Uon = ");
 
 	
 	public Icz(){

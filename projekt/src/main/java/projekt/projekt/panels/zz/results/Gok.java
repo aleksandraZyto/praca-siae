@@ -15,8 +15,8 @@ import projekt.projekt.panels.zz.obliczenia.I;
 public class Gok extends JPanel {
 
 	
-	public static JLabel g = Utils.label("? < Gop < ?");
-	public static JLabel u = Utils.label("? < Uop");
+	public static JLabel g = Utils.label("? < Gon < ?");
+	public static JLabel u = Utils.label("Uon = ");
 
 	
 	public Gok(){

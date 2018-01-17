@@ -8,7 +8,7 @@ import projekt.projekt.panels.zz.fields.KcPanel;
 import projekt.projekt.panels.zz.fields.UPanel;
 import projekt.projekt.panels.zz.fields.YPanel;
 
-public class G {
+public class Gok {
 
 	static double kb = Bm.d(KbPanel.f4);
 	static double yMi = Bm.d(YPanel.f1)/1000;

@@ -15,8 +15,8 @@ import projekt.projekt.panels.zz.obliczenia.I;
 public class Bok extends JPanel {
 
 	
-	public static JLabel b = Utils.label("? < Bop");
-	public static JLabel u = Utils.label("? < Uop");
+	public static JLabel b = Utils.label("? < Bon");
+	public static JLabel u = Utils.label("Uon = ");
 
 	
 	public Bok(){

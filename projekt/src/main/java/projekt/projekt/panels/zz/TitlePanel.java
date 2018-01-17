@@ -23,16 +23,25 @@ public class TitlePanel extends JPanel {
 //		setBackground(Utils.color());
 		
 		gc.gridx = 0;
-		gc.gridy = 0;
-		add(Utils.label("    Io >                  "), gc);
+		gc.gridy = 0;             
+		add(Utils.label("   Io >              "), gc);
+		gc.gridx ++;
+		gc.gridy = 0;               
+		add(Utils.label("   I -> cz          "), gc);
 		gc.gridx ++;
 		gc.gridy = 0;
-		add(Utils.label("Yo >                  "), gc);
+		add(Utils.label("   I -> b           "), gc);
 		gc.gridx ++;
 		gc.gridy = 0;
-		add(Utils.label("Bok              "), gc);
+		add(Utils.label("   Yo >             "), gc);
 		gc.gridx ++;
 		gc.gridy = 0;
-		add(Utils.label("   Go>        "), gc);
+		add(Utils.label("   Go >             "), gc);
+		gc.gridx ++;
+		gc.gridy = 0;
+		add(Utils.label("   Gok              "), gc);
+		gc.gridx ++;
+		gc.gridy = 0;
+		add(Utils.label("   Bok       "), gc);
 	}
 }

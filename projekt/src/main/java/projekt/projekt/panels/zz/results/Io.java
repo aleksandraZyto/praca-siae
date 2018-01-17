@@ -15,7 +15,7 @@ import projekt.projekt.panels.zz.obliczenia.I;
 public class Io extends JPanel {
 
 	
-	public static JLabel i = Utils.label("? < Iop < ?");
+	public static JLabel i = Utils.label("? < Ion < ?");
 
 	
 	public Io(){

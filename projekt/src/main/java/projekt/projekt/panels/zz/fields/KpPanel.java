@@ -22,7 +22,7 @@ public class KpPanel extends JPanel{
 	public KpPanel(){
 		Dimension size = getPreferredSize();
 		size.height = 30;
-		size.width = Utils.wpppzz();
+		size.width = Utils.secRowWidth();
 		setPreferredSize(size);
 //		setBorder(BorderFactory.createTitledBorder(""));		
 		setLayout(new GridBagLayout());
@@ -37,7 +37,7 @@ public class KpPanel extends JPanel{
 		field.setToolTipText("<html>zalecana wartość:<br/>0,85 dla przekaźników elektromechanicznych<br/>0,95-0,99 dla przekaźników statycznych analogowych i cyfrowych");
 		add(field, gc);	
 		
-		for (int i = 0; i <= 2; i++) {
+		for (int i = 0; i <= 5; i++) {
 			gc.anchor = Utils.fa();
 			gc.weightx = Utils.fw();
 			gc.gridx ++;

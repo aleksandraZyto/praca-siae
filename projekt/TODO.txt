@@ -1,17 +1,13 @@
-ZZ:
-dopisaæ symbole
-wyswietlanie a d s
-zeby mozna by³o wpisywaæ z przecinkiem
-jesli min > max to co
-wymaganine co do wpisywania pól
-po wciœniêcicu x zamyka siê tylko jedno okno
-
-ZWARCIOWE:
+dodaæ wykresy
 tooltipy
+dodaæ panel przeci¹¿eniowy
+
+walidacja znaków
+uporz¹dkowaæ klasy
+uproœciæ do metod
 
 
+wywaliæ Ir z I0
+I0 wyniki z mA
 
-na dzis:
-buttony do wykresów
-NIE DOBRANO NASTAWY
-symbole?wq
+osobne kb dla czmoc i bmoc?

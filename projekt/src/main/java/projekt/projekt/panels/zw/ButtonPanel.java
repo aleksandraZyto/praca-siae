@@ -25,7 +25,7 @@ import projekt.projekt.panels.zz.obliczenia.Y;public class ButtonPanel extends J
 	
 		Dimension size = getPreferredSize();
 		size.height = 50;
-		size.width = Utils.wpppzz();
+		size.width = Utils.secRowWidth();
 		setPreferredSize(size);
 //		setBorder(BorderFactory.createTitledBorder(""));		
 		setLayout(new GridBagLayout());

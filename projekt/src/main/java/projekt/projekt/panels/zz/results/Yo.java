@@ -15,8 +15,8 @@ import projekt.projekt.panels.zz.obliczenia.I;
 public class Yo extends JPanel {
 
 	
-	public static JLabel y = Utils.label("? < Yop < ?");
-	public static JLabel u = Utils.label("? < Uop");
+	public static JLabel y = Utils.label("? < Yon < ?");
+	public static JLabel u = Utils.label("Uon = ");
 
 	
 	public Yo(){

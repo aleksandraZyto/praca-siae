@@ -1,6 +1,8 @@
  package projekt.projekt.panels.zz;
 
+import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 
@@ -32,6 +34,7 @@ public class ZzFieldPanel extends JPanel {
 	private IPanel	iPanel;
 	private IdlPanel idlPanel;
 	private UnastPanel uNastPanel;
+	public static GridBagConstraints gc;
 	
 	public ZzFieldPanel(){
 		
@@ -53,8 +56,11 @@ public class ZzFieldPanel extends JPanel {
 		setPreferredSize(size);
 //		setBorder(BorderFactory.createTitledBorder(""));		
 		setLayout(new GridBagLayout());
-		GridBagConstraints gc = new GridBagConstraints();	
-
+		gc = new GridBagConstraints();	
+		
+//		Container contentPane = frame.getContentPane();
+//		contentPane.setLayout(new FlowLayout());
+		
 		//unast
 		gc.gridx = 0;
 		gc.gridy ++;
@@ -64,41 +70,46 @@ public class ZzFieldPanel extends JPanel {
 		gc.gridx = 0;
 		gc.gridy ++;
 		add(kbPanel, gc);
-		//kc
-		gc.gridx = 0;
-		gc.gridy ++;
-		add(kcPanel, gc);
-		//ir
-		gc.gridx = 0;
-		gc.gridy ++;
-		add(irPanel, gc);
-		//ics
-		gc.gridx = 0;
-		gc.gridy ++;
-		add(icsPanel, gc);
-		//y
-		gc.gridx = 0;
-		gc.gridy ++;
-		add(yPanel, gc);
-		//u
-		gc.gridx = 0;
-		gc.gridy ++;
-		add(uPanel, gc);
-		//ic
-		gc.gridx = 0;
-		gc.gridy ++;
-		add(icPanel, gc);
 		//kp
 		gc.gridx = 0;
 		gc.gridy ++;
 		add(kpPanel, gc);
-		//i
+		//kc
 		gc.gridx = 0;
 		gc.gridy ++;
-		add(iPanel, gc);
+		add(kcPanel, gc);
+		//ic
+				gc.gridx = 0;
+				gc.gridy ++;
+				add(icPanel, gc);
+		//ics
+		gc.gridx = 0;
+		gc.gridy ++;
+		add(icsPanel, gc);
 		//idl
 		gc.gridx = 0;
 		gc.gridy ++;
 		add(idlPanel, gc);		
+		
+		//ir
+				gc.gridx = 0;
+				gc.gridy ++;
+				add(irPanel, gc);
+		//y
+		gc.gridx = 0;
+		gc.gridy ++;
+		add(yPanel, gc);
+		
+		//i
+				gc.gridx = 0;
+				gc.gridy ++;
+				add(iPanel, gc);
+				//u
+		gc.gridx = 0;
+		gc.gridy ++;
+		add(uPanel, gc);
+		
+		
+		
 	}
 }

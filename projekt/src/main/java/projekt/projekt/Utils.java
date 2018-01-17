@@ -18,12 +18,9 @@ import javax.swing.JTextField;
 
 public class Utils {
 	
-	public static int wpppzz(){
-		return 320;
-	}
 	
 	public static int secRowWidth(){
-		return 330;
+		return 500;
 	}
 	
 	public static int columnHeight(){
@@ -121,6 +118,11 @@ public class Utils {
 
 	public static Color color2() {
 		return Color.LIGHT_GRAY;
+	}
+
+	public static boolean disabled() {
+		
+		return false;
 	}
 	
 }

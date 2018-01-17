@@ -10,6 +10,7 @@ import projekt.projekt.panels.zz.LabelsPanel;
 import projekt.projekt.panels.zz.ResultPanel;
 import projekt.projekt.panels.zz.TitlePanel;
 import projekt.projekt.panels.zz.UnitPanel;
+import projekt.projekt.panels.zz.UwagaPanel;
 import projekt.projekt.panels.zz.WspResultPanel;
 import projekt.projekt.panels.zz.ZzFieldPanel;
 import projekt.projekt.panels.zz.obliczenia.ButtonPanel;
@@ -24,6 +25,7 @@ public class ZzFrame extends JFrame{
 	private WspResultPanel wspResultPanel;
 	private ButtonPanel buttonPanel;
 	private ResultPanel rPanel;
+	private UwagaPanel uwaga;
 	
 	public ZzFrame(String title){
 		super(title);
@@ -31,6 +33,7 @@ public class ZzFrame extends JFrame{
 		setLayout(new GridBagLayout());
 		GridBagConstraints gc = new GridBagConstraints();
 
+		uwaga = new UwagaPanel();
 		panel = new ZzFieldPanel();
 		lpanel = new LabelsPanel();
 		hfPanel = new HFPanel();
@@ -50,17 +53,10 @@ public class ZzFrame extends JFrame{
 		gc.gridy = 3;
 		add(buttonPanel, gc);
 		
-//		gc.gridx = 0;
-//		gc.gridy = 4;
-////		gc.gridwidth = 2;
-//		gc.anchor = GridBagConstraints.EAST;
-//		add(rPanel, gc);
+		gc.gridx = 0;
+		gc.gridy = 0;
+		add(uwaga, gc);	
 		
-//		gc.gridx = 1;
-//		gc.gridy = 4;
-//		gc.anchor = GridBagConstraints.EAST;
-//		add(rPanel, gc);
-			
 		gc.gridx = 2;
 		gc.gridy = 2;
 		add(unitPanel, gc);

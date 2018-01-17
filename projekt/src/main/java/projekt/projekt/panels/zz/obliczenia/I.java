@@ -10,12 +10,11 @@ import projekt.projekt.panels.zz.fields.KpPanel;
 public class I {
 	
 	static double kb = Bm.d(KbPanel.f1);
-	static double iCl = Bm.d(IcPanel.field);
+	static double iCl = Bm.d(IcPanel.f1);
 	static double kp = Bm.d(KpPanel.field);
 	static double p = Bm.p();
-	static double iMi = Bm.d(IPanel.field)/1000;
-	static double iCs = Bm.d(IcsPanel.field);
-	static double a = Bm.a();
+	static double iMi = Bm.d(IPanel.field1)/1000;
+	static double iCs = Bm.d(IcsPanel.f1);
 	static double kc = Bm.d(KcPanel.f1);
 
 	public static double iMin(){
@@ -23,7 +22,7 @@ public class I {
 	}
 	
 	public static double iMax(){
-		double ulamek = (0.5*iCs*(1-a))/p;
+		double ulamek = (0.5*(iCs-iCl))/p;
 		return (ulamek-iMi)/kc;
 	}
 }

@@ -15,12 +15,17 @@ import projekt.projekt.Utils;
 
 public class UnastPanel extends JPanel{
 	
-	public static JTextField field;
+	public static JTextField f1;
+	public static JTextField f2;
+	public static JTextField f3;
+	public static JTextField f4;
+	public static JTextField f5;
+	public static JTextField f6;
 	
 	public UnastPanel(){
 		Dimension size = getPreferredSize();
 		size.height = 30;
-		size.width = Utils.wpppzz();
+		size.width = Utils.secRowWidth();
 		setPreferredSize(size);
 //		setBorder(BorderFactory.createTitledBorder(""));		
 		setLayout(new GridBagLayout());
@@ -29,15 +34,65 @@ public class UnastPanel extends JPanel{
 		
 		final List<JTextField> uNastFields = new ArrayList<JTextField>();
 		
-		for(int i=0; i<=3; i++ ){
-			field = Utils.numberField("12");
-			gc.anchor = Utils.fa();
-			gc.weightx = Utils.fw();
-			gc.gridx ++;
-			gc.gridy = 0;			
-				add(field, gc);
-				field.setToolTipText("<html>zalecana wartość: ");
-				Utils.zzInputFields(field, uNastFields);
-			}
-		}
+		gc.gridx = 0;
+		gc.gridy = 0;		
+		add(Utils.label("                        "), gc);
+		
+		f1 = Utils.numberField("12");
+		gc.anchor = Utils.fa();
+		gc.weightx = Utils.fw();
+		gc.gridx ++;
+		gc.gridy = 0;			
+		add(f1, gc);
+		f1.setToolTipText("<html>zalecana wartość: 12-15 [V] ");
+		Utils.zzInputFields(f1, uNastFields);
+
+		f2 = Utils.numberField("12");
+		gc.anchor = Utils.fa();
+		gc.weightx = Utils.fw();
+		gc.gridx ++;
+		gc.gridy = 0;			
+		add(f2, gc);
+		f2.setToolTipText("<html>zalecana wartość: 12-15 [V] ");
+		Utils.zzInputFields(f2, uNastFields);
+	
+		f3 = Utils.numberField("12");
+		gc.anchor = Utils.fa();
+		gc.weightx = Utils.fw();
+		gc.gridx ++;
+		gc.gridy = 0;			
+		add(f3, gc);
+		f3.setToolTipText("<html>zalecana wartość: 12-15 [V] ");
+		Utils.zzInputFields(f3, uNastFields);
+	
+		f4 = Utils.numberField("12");
+		gc.anchor = Utils.fa();
+		gc.weightx = Utils.fw();
+		gc.gridx ++;
+		gc.gridy = 0;			
+		add(f4, gc);
+		f4.setToolTipText("<html>zalecana wartość: 12-15 [V] ");
+		Utils.zzInputFields(f4, uNastFields);
+	
+		f5 = Utils.numberField("12");
+		gc.anchor = Utils.fa();
+		gc.weightx = Utils.fw();
+		gc.gridx ++;
+		gc.gridy = 0;			
+		add(f5, gc);
+		f5.setToolTipText("<html>zalecana wartość: 12-15 [V] ");
+		Utils.zzInputFields(f5, uNastFields);
+	
+		f6 = Utils.numberField("12");
+		gc.anchor = Utils.fa();
+		gc.weightx = Utils.fw();
+		gc.gridx ++;
+		gc.gridy = 0;			
+		add(f6, gc);
+		f6.setToolTipText("<html>zalecana wartość: 12-15 [V] ");
+		Utils.zzInputFields(f6, uNastFields);
+	
+			
+			
 	}
+}
